@@ -68,7 +68,7 @@ sudo pipx ensurepath
 ```
 <br>All the above commands are also supplied in the config_controlnode.sh file. You can run that file once to generate the SSH keys and install Ansible.
 
-![Bash Script: Configure Control Node](/assets/config_controlnode.sh)<br>
+[Bash Script: Configure Control Node](/Linux/Prod/Assets/config_controlnode.sh)<br>
 <br>**config_controlnode.sh**
 ```bash
 #!/bin/bash
