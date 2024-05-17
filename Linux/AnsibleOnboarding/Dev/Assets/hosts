@@ -1,0 +1,3 @@
+[servers]
+ubtb ansible_ssh_host=10.160.124.5
+rhelb ansible_ssh_host=10.160.124.8
