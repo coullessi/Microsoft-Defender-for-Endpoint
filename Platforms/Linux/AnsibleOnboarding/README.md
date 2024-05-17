@@ -9,7 +9,7 @@ You can deploy, configure, and test MDE functionalities on development servers, 
 - Managed node (prod): rhela
 - Managed node (prod): deba
 - Managed node (dev): ubtb
-- Managed node (dev): rhelb
+- Managed node (dev): rhelb <br>
 
 | Ubuntu 22.04-LTS (jammy) | Redhat Linux - RHEL 9 | Debian Linux 11 (bullseye) |
 | ---------- | ---------- | ---------- |
