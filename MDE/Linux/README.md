@@ -14,6 +14,6 @@ This lab exercise will also walk you through configuring for MDE features, capab
 
 ## Installation instructions
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
-- [Deploy MDE on Linux Manually](./Linux/ManualOnboarding/README.md)
-- [Deploy MDE on Linux with a Script](./Linux/ScriptOnboarding/README.md)
-- [Deploy MDE on Linux with Ansible](./Linux/AnsibleOnboarding/README.md)
+- [Deploy MDE on Linux Manually](./ManualOnboarding/README.md)
+- [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md)
+- [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md)
