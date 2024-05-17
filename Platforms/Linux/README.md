@@ -12,6 +12,17 @@ This lab exercise will also walk you through configuring MDE features and capabi
 - Beginner-level experience in Linux and BASH scripting.
 - Administrative privileges on the device (in case of manual deployment).
 
+## Example of environment
+- Control node (prod): ubta
+- Managed node (prod): rhela
+- Managed node (prod): deba
+- Managed node (dev):  ubtb
+- Managed node (dev):  rhelb
+| Ubuntu 22.04-LTS (jammy) | Redhat Linux - RHEL 9 | Debian Linux 11 (bullseye) |
+| ---------- | ---------- | ---------- |
+| **utba** | **rhela** | **deba**|	
+| **ubtb** | **rhelb** | |
+
 ## Installation instructions
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
 - [Deploy MDE on Linux Manually](./ManualOnboarding/README.md)
