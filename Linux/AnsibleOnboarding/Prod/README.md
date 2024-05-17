@@ -15,7 +15,7 @@ In addition to the downloaded onboarding package from the Defender portal, use y
 [Hosts file](./Assets/hosts)<br>
 [MDE repositories file](./Assets/add_mdatp_repo.yml)<br>
 [MDE setup file](./Assets/onboarding_setup.yml)<br>
-[MDE installa file](./Assets/install_mdatp.yml)<br>
+[MDE install file](./Assets/install_mdatp.yml)<br>
 [MDE uninstall file](./Assets/uninstall_mdatp.yml)
 
 <hr>
