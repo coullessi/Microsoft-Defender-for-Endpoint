@@ -1,4 +1,3 @@
-<details>
 ## Deploy MDE on Linux with Ansible<br>
 
 ## Example of environment
@@ -309,4 +308,3 @@ just in case you want to remove mdatp from devices and offboard them from a tena
 ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts
 ```
-</details>
