@@ -18,7 +18,7 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 
 <br>
 
-Connect with me:
-[![CoulLabs](./Platforms/Assets/Pictures/coullabs1.png)](https://www.coullabs.com)<br>
+Connect with me:<br>
+[![coullabs.com](./Platforms/Assets/Pictures/coullabs1.png)](https://www.coullabs.com)<br>
 : Linked<br>
 : YouTube<br>
