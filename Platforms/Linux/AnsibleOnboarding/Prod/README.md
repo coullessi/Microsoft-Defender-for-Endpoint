@@ -4,8 +4,8 @@
 
 | Ubuntu 22.04-LTS (jammy) | Redhat Linux - RHEL 9 | Debian Linux 11 (bullseye) |
 | ---------- | ---------- | ---------- |
-| utba (prod device, the control node) | rhela (prod device, a managed node) | deba (prod device, a managed node)|	
-| ubtb (dev device, a managed node) | rhelb (dev device, a managed node) | |
+| **utba** (prod device, the control node) | **rhela** (prod device, a managed node) | **deba** (prod device, a managed node)|	
+| **ubtb** (dev device, a managed node) | **rhelb** (dev device, a managed node) | |
 
 :information_source: **Some notes**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
