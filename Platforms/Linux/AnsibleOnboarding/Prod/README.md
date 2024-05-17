@@ -10,15 +10,14 @@
 <hr>
 
 ### Step 1: The configuration files
-In addition to the downloaded onboarding package from the Defender portal, use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
-[Control node configuration file](./Assets/config_controlnode.sh)<br>
-[Hosts file](./Assets/hosts)<br>
-[MDE repositories file](./Assets/add_mdatp_repo.yml)<br>
-[MDE setup file](./Assets/onboarding_setup.yml)<br>
-[MDE install file](./Assets/install_mdatp.yml)<br>
-[MDE uninstall file](./Assets/uninstall_mdatp.yml)
+In addition to the downloaded onboarding package from the [Defender portal]("https://security.microsoft.com/securitysettings/endpoints"), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
+1. [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
+2. [Hosts file](./Assets/hosts): it contains the list of devices to be onboarded to MDE<br>
+3. [MDE repositories file](./Assets/add_mdatp_repo.yml): in this file the MDE repositories (i.e. prod, insiders-fast, etc.) are specified.<br>
+4. [MDE setup file](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the onboarding package (**mdatp_onboard.json**) on a device<br>
+5. [MDE install file](./Assets/install_mdatp.yml): this file is referenced by Ansible to install MDE on a device.<br>
+6. [MDE uninstall file](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.
 
-<hr>
 
 :information_source: **Some notes**:<br>
 In this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
@@ -114,7 +113,7 @@ Run the following commands, for example from the home directory:
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
 #### Step 7: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices
-just in case you want to remove mdatp from devices and offboard them from a tenant
+just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
 ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts
