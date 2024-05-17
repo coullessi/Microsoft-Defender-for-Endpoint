@@ -4,6 +4,7 @@
 - Control node: ubta
 - Managed node: rhela
 - managed node: deba
+
 | Ubuntu 22.04-LTS (jammy) | Redhat Linux - RHEL 9 | Debian Linux 11 (bullseye) |
 | ---------- | ---------- | ---------- |
 | **utba** | **rhela** | **deba**|	
