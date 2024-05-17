@@ -7,11 +7,11 @@ This lab exercise will also walk you through configuring for MDE features, capab
 
 
 ## Prerequisites
-- Access to the Microsoft Defender portal
+- Access to the Microsoft Defender portal.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
-- Linux distribution using the **_systemd_** system manager
-- Beginner-level experience in Linux and BASH scripting
-- Administrative privileges on the device (in case of manual deployment)
+- Linux distribution using the **_systemd_** system manager.
+- Beginner-level experience in Linux and BASH scripting.
+- Administrative privileges on the device (in case of manual deployment).
 
 ## Installation instructions
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
