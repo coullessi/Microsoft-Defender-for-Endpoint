@@ -1,20 +1,11 @@
-# Welcome: Microsoft Defender for Endpoint on Linux
+![Defender for Endpoint](./MDE/Assets/Pictures/MDE.png)
 
+# Microsoft Defender for Endpoint Deployment Lab
+Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.<br>
+Defender for Endpoint is a primary component of the **Assume breach** principle and an important element of your extended detection and response (XDR) deployment with Microsoft Defender XDR.<br>
+Defender for Endpoint uses **endpoint behavioral sensors**, **cloud security analytics**, and **threat intelligence** to form with other security solutions a unified pre-breach and post-breach enterprise defense suite for Microsoft Defender XDR. This native integration across endpoints, identity, email, and applications allows you to detect, prevent, investigate, and automatically respond to sophisticated attacks.
 
-## Introduction
-Through guided steps, you will ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
-This lab exercise will also walk you through configuring for MDE features, capabilities. Using a profile, you will configure MDE preferences (which take precedence over the ones set locally a the device). In other words, users in the enterprise will not be able to change preferences that are set through the configuration profile.
-
-
-## Prerequisites
-- Access to the Microsoft Defender portal.
-- Ensure that you have a Microsoft Defender for Endpoint subscription.
-- Linux distribution using the **_systemd_** system manager.
-- Beginner-level experience in Linux and BASH scripting.
-- Administrative privileges on the device (in case of manual deployment).
-
-## Installation instructions
-In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
-- [Deploy MDE on Linux Manually](./Linux/ManualOnboarding/README.md)
-- [Deploy MDE on Linux with a Script](./Linux/ScriptOnboarding/README.md)
-- [Deploy MDE on Linux with Ansible](./Linux/AnsibleOnboarding/README.md)
+## Deploy Microsoft Defender for Endpoint
+In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Windows and Linux Devices.
+- [Deploy MDE on Windows](./MDE/Windows/README.md)
+- [Deploy MDE on Linux](./MDE/Linux/README.md)
