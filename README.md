@@ -1,4 +1,4 @@
-![Defender for Endpoint](./MDE/Assets/Pictures/MDE.png)
+![Defender for Endpoint](./Platforms/Assets/Pictures/MDE.png)
 
 # Microsoft Defender for Endpoint Deployment Lab
 Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.<br>
