@@ -15,3 +15,10 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 ## Reference Documents
 [Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)<br>
 [Deploy Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)
+
+<br>
+
+Connect with me:
+[![CoulLabs](./Platforms/Assets/Pictures/CoulLabs.png)](https://www.coullabs.com)<br>
+: Linked 
+: YouTube
