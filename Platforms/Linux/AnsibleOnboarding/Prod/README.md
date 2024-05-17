@@ -7,18 +7,6 @@
 | utba (prod device, the control node) | rhela (prod device, a managed node) | deba (prod device, a managed node)|	
 | ubtb (dev device, a managed node) | rhelb (dev device, a managed node) | |
 
-<hr>
-
-### Step 1: The configuration files
-In addition to the downloaded onboarding package from the [Defender portal]("https://security.microsoft.com/securitysettings/endpoints"), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
-1. [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
-2. [Hosts file](./Assets/hosts): it contains the list of devices to be onboarded to MDE<br>
-3. [MDE repositories file](./Assets/add_mdatp_repo.yml): in this file the MDE repositories (i.e. prod, insiders-fast, etc.) are specified.<br>
-4. [MDE setup file](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the onboarding package (**mdatp_onboard.json**) on a device<br>
-5. [MDE install file](./Assets/install_mdatp.yml): this file is referenced by Ansible to install MDE on a device.<br>
-6. [MDE uninstall file](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.
-
-
 :information_source: **Some notes**:<br>
 In this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
@@ -27,6 +15,16 @@ Make sure unzip is installed on all managed nodes (Linux VMs that you need to on
 <br>
 ***Ubuntu***: ```sudo apt install unzip```<br>
 ***RedHat***: ```sudo yum install unzip```
+<hr>
+
+### Step 1: The configuration files
+In addition to the downloaded onboarding package from the [Defender portal](https://security.microsoft.com/securitysettings/endpoints), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
+- [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
+- [Hosts file](./Assets/hosts): it contains the list of devices to be onboarded to MDE.<br>
+- [MDE repositories file](./Assets/add_mdatp_repo.yml): in this file, the MDE repositories (i.e. prod, insiders-fast, etc.) are specified.<br>
+- [MDE setup file](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the **mdatp_onboard.json** onboarding package on a device.<br>
+- [MDE install file](./Assets/install_mdatp.yml): this file is referenced by Ansible to install MDE on a device.<br>
+- [MDE uninstall file](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.
 
 ### Step 2: Assumption
 You can provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.

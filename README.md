@@ -9,3 +9,10 @@ Defender for Endpoint uses **endpoint behavioral sensors**, **cloud security ana
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Windows and Linux Devices.
 - [Deploy MDE on Windows](./Platforms/Windows/README.md)
 - [Deploy MDE on Linux](./Platforms/Linux/README.md)
+
+## Reference Documents
+[Deploy Microsoft Defender for Endpoint on Linux manually](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide)<br>
+[Deploy Microsoft Defender for Endpoint on Linux with a Script](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#installer-script)<br>
+[Deploy Microsoft Defender for Endpoint on Linux with Ansible](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-with-ansible?view=o365-worldwide)<br>
+[Install Ansible - Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)<br>
+[Install pipx](https://pipx.pypa.io/stable/)
