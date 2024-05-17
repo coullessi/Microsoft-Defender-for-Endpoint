@@ -7,8 +7,7 @@
 | utba (prod device, the control node) | rhela (prod device, a managed node) | deba (prod device, a managed node)|	
 | ubtb (dev device, a managed node) | rhelb (dev device, a managed node) | |
 
-:information_source: **Some notes**:<br>
-In this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
+:information_source: **Some notes**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
 One of the VM will be the ansible control node and all other VMs will be the managed nodes, refer to the table of devices above.
 Make sure unzip is installed on all managed nodes (Linux VMs that you need to onboard to MDE), for example:<br>
