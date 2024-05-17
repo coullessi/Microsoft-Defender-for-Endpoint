@@ -1,6 +1,6 @@
 ## Deploy MDE on Linux with Ansible<br>
 
-## Example of environment
+### Example of environment
 
 | Ubuntu 22.04-LTS (jammy) | Redhat Linux - RHEL 9 | Debian Linux 11 (bullseye) |
 | ---------- | ---------- | ---------- |
