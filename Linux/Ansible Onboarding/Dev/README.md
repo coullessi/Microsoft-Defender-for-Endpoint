@@ -1,5 +1,5 @@
 <details>
-<summary><b>Deploy MDE on Linux with Ansible</b></summary><br>
+## Deploy MDE on Linux with Ansible<br>
 
 ## Example of environment
 
