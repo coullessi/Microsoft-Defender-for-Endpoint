@@ -8,7 +8,8 @@ Defender for Endpoint uses **endpoint behavioral sensors**, **cloud security ana
 ## Deploy Microsoft Defender for Endpoint
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Windows and Linux Devices.
 - [Deploy MDE on Windows](./Platforms/Windows/README.md)
-- [Deploy MDE on Linux](./Platforms/Linux/README.md)<hr>
+- [Deploy MDE on Linux](./Platforms/Linux/README.md)
+
 
 ## Reference Documents
 [Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)<br>
