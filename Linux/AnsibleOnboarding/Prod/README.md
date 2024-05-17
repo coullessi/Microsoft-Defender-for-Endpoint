@@ -6,7 +6,20 @@
 | ---------- | ---------- | ---------- |
 | utba (prod device, the control node) | rhela (prod device, a managed node) | deba (prod device, a managed node)|	
 | ubtb (dev device, a managed node) | rhelb (dev device, a managed node) | |
-		
+
+<hr>
+
+### Step 1: The configuration files
+In addition to the downloaded onboarding package from the Defender portal, use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
+[Control node configuration file](./Assets/config_controlnode.sh)<br>
+[Hosts file](./Assets/hosts)<br>
+[MDE repositories file](./Assets/add_mdatp_repo.yml)<br>
+[MDE setup file](./Assets/onboarding_setup.yml)<br>
+[MDE installa file](./Assets/install_mdatp.yml)<br>
+[MDE uninstall file](./Assets/uninstall_mdatp.yml)
+
+<hr>
+
 :information_source: **Some notes**:<br>
 In this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
@@ -16,7 +29,7 @@ Make sure unzip is installed on all managed nodes (Linux VMs that you need to on
 ***Ubuntu***: ```sudo apt install unzip```<br>
 ***RedHat***: ```sudo yum install unzip```
 
-### Step 1: Assumption
+### Step 2: Assumption
 You can provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
 You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
 You can find help for the usage of commands by typing <command_name> --help, or man <command_name> to view the full documentation for a command. 
@@ -26,7 +39,7 @@ You can update a system and install applications, for example for a Debian syste
 ```sudo apt update && sudo apt upgrade``` to fully update the system.<br>
 ```sudo apt install unzip``` to install unzip.
 
-#### Step 2: Create and configure SSH keys, and install Ansible
+#### Step 3: Create and configure SSH keys, and install Ansible
 The assumption is that the files and keys do not exist, you'll need to create them then.
 Create a private/public key pair on the Ansible control node that you'll use to automate tasks. 
 The command ```ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey``` will generate a private/public key pair and store them in the ControlNodeKey and ControlNodeKey.pub files respectively.
@@ -61,21 +74,12 @@ sudo chown lessi:lessi ~/.ssh/known_hosts ~/.ssh/known_hosts.old # In this case,
 
 Once Ansible is installed, log out and log back into the system.
 
-### Step 3: Download onboarding package
+### Step 4: Download onboarding package
 Go to _security.microsoft.com > Settings > Endpoints > Onboarding_ and select the following:
 - ```Operation system```: Linux Server
 - ```Connectivity type```: Streamlined
 - ```Deployment method```: Your preferred Linux configuration management tool
 - ```Click Download onboarding package```.
-
-### Step 4: The configuration files
-In addition to the downloaded onboarding package from the Defender portal, use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.
-[Control node configuration file](./Assets/config_controlnode.sh)<br>
-[Hosts file](./Assets/hosts)<br>
-[MDE repositories file](./Assets/add_mdatp_repo.yml)<br>
-[MDE setup file](./Assets/onboarding_setup.yml)<br>
-[MDE installa file](./Assets/install_mdatp.yml)<br>
-[MDE uninstall file](./Assets/uninstall_mdatp.yml)<br>
 
 ### Step 5: Copy files to the remote Linux Server (Ansible Control Node) 
 In the example below that copies all files from the source folder to the destination directory (the destination directory will be created if it doesn't exist), the following are specified:
@@ -88,7 +92,7 @@ In the example below that copies all files from the source folder to the destina
 
 On the Linux Server, run ```ls prod``` to verify all files are copied from your local system to the Ansible control node.
 
-#### Step 6: Install mdatp
+### Step 6: Install mdatp
 ___Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts servers -m ping``` where hosts is the list of your managed nodes and servers are specific devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.___
 ___Then run  ```ansible -K install_mdatp.yml -i hosts``` to install MDE on your list of devices.___
 ```bash
