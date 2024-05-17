@@ -11,5 +11,5 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 - [Deploy MDE on Linux](./Platforms/Linux/README.md)
 
 ## Reference Documents
-[Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)
+[Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)<br>
 [Deploy Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)
