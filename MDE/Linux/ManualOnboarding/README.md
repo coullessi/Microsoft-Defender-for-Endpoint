@@ -1,5 +1,4 @@
-<details>
-<summary><b>Deploy MDE on Linux Manually</b></summary><br>
+# Welcome: Deploy MDE on Linux Manually
 
 **Example of Red Hat Enterprise Linux 9.3**
 
@@ -241,4 +240,3 @@ This will give you the _**MicrosoftDefenderATPOnboardingLinuxServer**.py_ file.
 >```bash
 >mdatp threat list
 >```
-</details>
