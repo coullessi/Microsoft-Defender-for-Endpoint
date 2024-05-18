@@ -8,7 +8,6 @@
 This lab exercise will also walk you through configuring MDE features and capabilities. Using a profile, you will configure MDE preferences (which take precedence over the ones set locally a the device). In other words, users in the enterprise will not be able to change preferences that are set through the configuration profile.
 
 ## Prerequisites
-- Basic knowledge of Linux shell commands. 
 - Access to the Microsoft Defender portal.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
 - Linux distribution using the **_systemd_** system manager.
