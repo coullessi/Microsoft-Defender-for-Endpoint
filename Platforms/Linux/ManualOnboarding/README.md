@@ -1,4 +1,4 @@
-# Welcome: Deploy MDE on Linux Manually
+# Deploy MDE on Linux Manually
 
 **Example of Red Hat Enterprise Linux 9.3**
 
