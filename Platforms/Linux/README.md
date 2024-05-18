@@ -1,4 +1,4 @@
-# Welcome: Microsoft Defender for Endpoint on Linux
+# Microsoft Defender for Endpoint on Linux
 
 ## Introduction
 :information_source:**What this lab IS/ISN'T about**<br>
