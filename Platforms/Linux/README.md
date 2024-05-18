@@ -1,7 +1,7 @@
 # Microsoft Defender for Endpoint on Linux
 
 ## Introduction
-:information_source:**What this lab IS/ISN'T about**<br>
+:information_source:**What this lab IS / IS NOT**<br>
 
 **This lab is not about** teaching you the administration of a Linux device.<br>
 **This lab is about** providing steps to ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
