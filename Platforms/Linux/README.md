@@ -1,10 +1,13 @@
 # Welcome: Microsoft Defender for Endpoint on Linux
 
 ## Introduction
-Through guided steps, you will ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
+:information_source
+**What this lab is not about**: this lab is mot about teaching you the administration of a Linux device<br>
+**What this lab is about**: Through guided steps, you will ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
 This lab exercise will also walk you through configuring MDE features and capabilities. Using a profile, you will configure MDE preferences (which take precedence over the ones set locally a the device). In other words, users in the enterprise will not be able to change preferences that are set through the configuration profile.
 
 ## Prerequisites
+- Basic knowledge of Linux shell commands. 
 - Access to the Microsoft Defender portal.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
 - Linux distribution using the **_systemd_** system manager.
