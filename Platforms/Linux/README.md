@@ -21,7 +21,7 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 - [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md)
 - [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md)
 
-If you prefer a video instruction, go to [YouTube](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A).
+Video instructions can be found [here](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A).
 <br>
 
 ## Reference documents
@@ -30,3 +30,6 @@ If you prefer a video instruction, go to [YouTube](https://www.youtube.com/chann
 [Deploy Microsoft Defender for Endpoint on Linux with Ansible](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-with-ansible?view=o365-worldwide)<br>
 [Install Ansible - Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)<br>
 [Install pipx](https://pipx.pypa.io/stable/)
+<hr>
+[![LinkeIn](../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
