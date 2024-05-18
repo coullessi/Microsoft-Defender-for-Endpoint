@@ -30,6 +30,8 @@ Video instructions can be found [here](https://www.youtube.com/channel/UCk8wUhDa
 [Deploy Microsoft Defender for Endpoint on Linux with Ansible](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-with-ansible?view=o365-worldwide)<br>
 [Install Ansible - Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)<br>
 [Install pipx](https://pipx.pypa.io/stable/)
+
 <hr>
-[![LinkeIn](../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
-[![YouTube](../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+
+[![LinkeIn](../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
