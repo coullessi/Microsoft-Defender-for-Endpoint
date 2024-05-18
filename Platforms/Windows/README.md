@@ -11,4 +11,4 @@ Coming soon...
 <hr>
 
 [![LinkeIn](file:///Platforms/Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
-[![YouTube](../Platforms/Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+[![YouTube](../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
