@@ -21,7 +21,7 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 - [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md)
 - [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md)
 
-If you prefer a video instruction, go to [YouTube](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+If you prefer a video instruction, go to [YouTube](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A).
 <br>
 
 ## Reference documents
