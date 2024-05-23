@@ -1,7 +1,8 @@
 # Deploy MDE on Linux Manually
 
+
 ## 1. Connect to the server: example of Red Hat Enterprise
-From a Terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
+From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
 
 :bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.
 ```bash
@@ -128,9 +129,6 @@ mdatp health --field org_id
 Check the health status of the product. A return value of 'true' denotes that the product is functioning as expected.
 ```bash
 mdatp health --field healthy
-```
-```bash
-mdatp health | grep -i 'network\|enabled\|managed_by\|MDE-management\|managed\|real_time_protection\|behavior_monitoring\|edr\|MDE\|org_id\|tag'
 ```    
 Check the status of the definition update, return value should be up_to_date.
 ```bash
@@ -152,10 +150,3 @@ List the detected threats
 ```bash
 mdatp threat list
 ```
-
-
-> :warning: **Warning:** Do not push the big red button.
-
-> :memo: **Note:** Sunrises are beautiful.
-
-> :bulb: **Tip:** Remember to appreciate the little things in life.
