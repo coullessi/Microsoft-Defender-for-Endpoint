@@ -9,6 +9,7 @@ This lab exercise will also walk you through configuring MDE features and capabi
 
 :information_source: **Note:** In this lab I use ```vim``` and ```Visual Studio Code``` to edit files. You can use you favorite text editor.
 
+
 ## Prerequisites
 - Access to the Microsoft Defender portal.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
