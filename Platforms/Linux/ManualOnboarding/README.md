@@ -2,7 +2,7 @@
 
 ## 1. Connect to the server: example of Red Hat Enterprise
 From a Terminal session, connect to a Linux VM using the command: **_ssh user@ip_address_** or **_ssh user@ip_address -p port_number_** if you are connecting to a port other then TCP port 22.<br>
-:information: The _IP address_ can also be the FQDN of the server you are connecting to.
+:bulb: **Tip:** The _IP address_ can also be the FQDN of the server you are connecting to.
 ```bash
 # Connect using an IP address
 ssh user@ip_address
