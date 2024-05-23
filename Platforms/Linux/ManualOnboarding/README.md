@@ -1,5 +1,6 @@
 # Deploy MDE on Linux Manually
 
+<br>
 
 ## 1. Connect to the server: example of Red Hat Enterprise
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
