@@ -14,10 +14,12 @@ ssh user@ip_address -p port_number
 ```
 :bulb: **Tip:** This is not needed, but you can use certificate-based authentication, so that you don't have to enter a password when you connect.
   
+
 ## 2. Update the server
 ```bash
 sudo yum update && sudo yum upgrade
 ```
+
 ## 3. Create a user 
 The user will be added the user to the 'wheel' group, so the user can manage the server. This step is not really needed. But this is to avoid login onto the server as root. You can create a user with multiple lines of commands or a single line of command.
 
@@ -51,7 +53,7 @@ Now, you can connect to your Linux device using the new user's (bob) credentials
 ssh bob@ip_address
 ```
 
-## 4. Install MDE
+## 4. Install mdatp
 [RHEL and variants (CentOS, Fedora, Oracle Linux, Amazon Linux 2, Rocky and Alma)](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
 
 Use ```hostnamectl``` command to identify system related information including distribution and release version.
@@ -97,7 +99,7 @@ Download the onboarding package from Microsoft Defender XDR portal<br>
 **Transfer the onboarding package to your Linux machine** 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
- scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" lessi@10.0.0.97:~/MDE
+ scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" bob@10.0.0.97:~/MDE
 ```  
 
 On the Linux machine:
@@ -112,7 +114,7 @@ Initially the client device is not associated with an organization and the orgId
 mdatp health --field org_id
 ``` 
 
-:exclamation: Verify python3 is installed
+Verify python3 is installed
 ```bash
 # Install python3 if it's not installed
 python3 --version

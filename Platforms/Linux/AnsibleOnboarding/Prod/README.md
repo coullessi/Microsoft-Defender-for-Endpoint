@@ -37,17 +37,17 @@ You can update a system and install applications, for example for a Debian syste
 ```sudo apt update && sudo apt upgrade``` to fully update the system.<br>
 ```sudo apt install unzip``` to install unzip.
 
-#### Step 3: Create and configure SSH keys, and install Ansible
+### Step 3: Create SSH keys and install Ansible
 The assumption is that the files and keys do not exist, you'll need to create them then.
 Create a private/public key pair on the Ansible control node that you'll use to automate tasks. 
 The command ```ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey``` will generate a private/public key pair and store them in the ControlNodeKey and ControlNodeKey.pub files respectively.
-You may also need to create the the know_hosts and known_hosts.old files on the devices if they do not exist. The **known_hosts** and **known_hosts.old** files are related to SSH (Secure Shell) and play a crucial role in verifying the identity of remote servers before establishing a connection. 
+You may also need to create the the know_hosts and known_hosts.old files on the devices if they do not exist. The ```known_hosts``` and ```known_hosts.old``` files are related to SSH (Secure Shell) and play a crucial role in verifying the identity of remote servers before establishing a connection. 
 The known_hosts file stores the public keys of servers that you have connected to using SSH.
 The known_hosts.old file is a backup of the known_hosts file.<br>
-### Generate SSH keys
+#### Generate SSH keys
 ```bash
 ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey
-sudo vim ~/.ssh/config # add the following line: IdentityFile ~/.ssh/ControlNodeKey - I use 'vim' to edit files, you use any other editor
+sudo vim ~/.ssh/config # add the following line: IdentityFile ~/.ssh/ControlNodeKey
 ls ~/.ssh/ # to view the list of files. You'll have the following: config, ControlNodeKey, ControlNodeKey.pub
 cat ~/.ssh/ControlNodeKey.pub # to display the value of the public key, copy it, you will add it to the ~/.ssh/authorized_keys file on the managed nodes.
 ```
@@ -55,18 +55,18 @@ Copy the value of the public key to the ansible managed nodes to the following f
 If either the directory ```.ssh``` or the file ```authorized_keys``` do not exist, create them.<br>
 Paste the value of the public key in the authorized_keys file and save the file.
 
-### Create the .ssh directory and the authorized_keys file under the .ssh directory
+#### Create the .ssh directory and the authorized_keys file under the .ssh directory
 ```bash 
 mkdir ~/.ssh # to create the .ssh directory
-touch ~/.ssh/authorized_keys # or sudo vim ~/.ssh/authorized_keys. (I use vim so the file is created and opened in edit mode).  
+touch ~/.ssh/authorized_keys # to create the authorized_keys file  
 ```
 
-Create the ***known_hosts*** and the ***known_hosts.old*** files 
+Create the ```known_hosts``` and the ```known_hosts.old``` files 
 ```bash
 sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old # This create the known_hosts and known_hosts.old files.
-sudo chown lessi:lessi ~/.ssh/known_hosts ~/.ssh/known_hosts.old # In this case, the user lessi is both the owner and group of the files.
+sudo chown bob:bob ~/.ssh/known_hosts ~/.ssh/known_hosts.old # In this case, the user bob is both the owner and group of the files.
 ```
-### Install Ansible on the control node (example of Ubuntu device)
+#### Install Ansible on the control node (example of Ubuntu device)
 
 <br>All the above commands are also supplied in the ```config_controlnode.sh``` file. You can run that file once to generate the SSH keys and install Ansible.
 
@@ -81,12 +81,13 @@ Go to _security.microsoft.com > Settings > Endpoints > Onboarding_ and select th
 
 ### Step 5: Copy files to the remote Linux Server (Ansible Control Node) 
 In the example below that copies all files from the source folder to the destination directory (the destination directory will be created if it doesn't exist), the following are specified:
-- __scp__ (command for a secure copy over SSH)
-- __Port number__ (port 45733 where the remote server is listening from incoming SSH requests)
-- __Location of the SSH private key__: E:\Repo\Linux\Connect\LocalHostKey, if you do not have a key configure, you can provide a password when prompted. 
-- __Source folder__ (folder containing files to be transferred): E:\Repo\Linux\MDELinux\ansible\prod 
-- __Destination directory__ (Remote server and destination where files will be transferred): ```lessi@domain.com:~/ansible.```, where ```domain.com``` can also be an ```IP address```.
-<br>__Example of command__: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Linux\MDELinux\ansible\prod lessi@domain.com:~/ansible```.
+- ```scp``` (command for a secure copy over SSH)
+- ```Port number```(port 45733 where the remote server is listening from incoming SSH requests)
+- ```Location of the SSH private key```: E:\Repo\Linux\Connect\LocalHostKey, if you do not have a key configure, you can provide a password when prompted. 
+- ```Source folder``` (folder containing files to be transferred): E:\Repo\Linux\MDELinux\ansible\prod 
+- ```Destination directory``` (Remote server and destination where files will be transferred): ```bob@domain.com:~/ansible.```, where ```domain.com``` can also be an ```IP address```.
+
+__Example of command__: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Linux\MDELinux\ansible\prod bob@domain.com:~/ansible```.
 
 On the Linux Server, run ```ls prod``` to verify all files are copied from your local system to the Ansible control node.
 
