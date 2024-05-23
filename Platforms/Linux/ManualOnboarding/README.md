@@ -9,7 +9,7 @@ ssh user@ip_address
 ssh user@ip_address -p port_number
 ```
 
-> :bulb: **Tip:** This is not needed, but [certificate-based authentication](YouTube) is also an option.<br><br>
+:bulb: **Tip:** This is not needed, but [certificate-based authentication](YouTube) is also an option.<br><br>
   
 ## 2. Update the server
 ```bash
