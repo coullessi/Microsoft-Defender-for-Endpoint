@@ -1,7 +1,8 @@
 # Deploy MDE on Linux Manually
 
 ## 1. Connect to the server: example of Red Hat Enterprise
-From a Terminal session, connect to a Linux VM using the command: **_ssh user@ip_address_** or **_ssh user@ip_address -p port_number_** if you are connecting to a port other then TCP port 22. The _IP address_ can also be the FQDN of the server you are connecting to.
+From a Terminal session, connect to a Linux VM using the command: **_ssh user@ip_address_** or **_ssh user@ip_address -p port_number_** if you are connecting to a port other then TCP port 22.<br>
+:information: The _IP address_ can also be the FQDN of the server you are connecting to.
 ```bash
 # Connect using an IP address
 ssh user@ip_address
@@ -94,7 +95,7 @@ Create a folder to store MDE onboarding files:
  cd MDE # to navigate in that directory
  ```
 - Transfer the onboarding package to your Linux machine: 
-In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: scp /path/to/local/file username@destination:/path/to/destination, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
+In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: scp <path_to_local_file> username@ip_address:<path_to_destination>, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
  scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" lessi@10.0.0.97:~/MDE
 ```  
