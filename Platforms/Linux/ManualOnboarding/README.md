@@ -1,8 +1,8 @@
 # Deploy MDE on Linux Manually
 
 ## 1. Connect to the server: example of Red Hat Enterprise
-From a Terminal session, connect to a Linux VM using the command: **_ssh user@ip_address_** or **_ssh user@ip_address -p port_number_** if you are connecting to a port other then TCP port 22.<br>
-:bulb: **Tip:** The _IP address_ can also be the FQDN of the server you are connecting to.
+From a Terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
+:bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.
 ```bash
 # Connect using an IP address
 ssh user@ip_address
@@ -51,10 +51,10 @@ ssh bob@ip_address
 
 ## 4. Install MDE
 [RHEL and variants (CentOS, Fedora, Oracle Linux, Amazon Linux 2, Rocky and Alma)](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
-##### Locate the installer script
-- Use hostnamectl command to identify system related information including distribution and release version.<br
 
-![Uninstall Ansible](/assets/pictures/rhel_hostnamectl.png)<br
+Use ```hostnamectl``` command to identify system related information including distribution and release version.
+
+![Distro detail](/assets/pictures/rhel_hostnamectl.png)<br>
 
 | Distro & Version  | Package Location |
 |----------|----------|
@@ -62,75 +62,58 @@ ssh bob@ip_address
 | RHEL/Centos/Oracle 8.0-8.8    | [RHEL/Centos/Oracle 8.0-8.8](https://packages.microsoft.com/config/rhel/8/prod.repo)  |
 | RHEL/Centos/Oracle 7.2-7.9 & Amazon    | [RHEL/Centos/Oracle 7.2-7.9 & Amazon](https://packages.microsoft.com/config/rhel/7.2/prod.repo)   |
 
-- Install yum-utils if it isn't already installed: 
+Install yum-utils if it isn't already installed: 
 ```bash
 sudo yum install yum-utils
 ```
-- Add the repository to your list of packages (Rhel 9.3 from the prod and insiders-fast channels)
+Add the repository to your list of packages (Rhel 9.3 from the prod and insiders-fast channels)
 ```bash
 sudo yum-config-manager --add-repo=https://packages.microsoft.com/config/rhel/9.0/prod.repo
 sudo yum-config-manager --add-repo=https://packages.microsoft.com/config/rhel/9.0/insiders-fast.repo
 ```
-- Install the Microsoft GPG public key
+Install the Microsoft GPG public key
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 ```
-- Application installation
+Application installation
 ```bash
-yum repolist # to list all repositories
+# List all repositories
+yum repolist 
 ```
  If you have multiple Microsoft repositories, for example, use the following command to install the package from the production channel.
  ```bash 
  # to install the package from the production repository.
  sudo yum --enablerepo=packages-microsoft-com-prod install mdatp
  ```
- - Set the device tag
+ Set the device tag
  ```bash
- sudo mdatp edr tag set --name GROUP --value 'MDE-Management' # to set the device tag.
+ sudo mdatp edr tag set --name GROUP --value 'MDE-Management'
  ```        
-- Download the onboarding package from Microsoft Defender XDR portal
-Create a folder to store MDE onboarding files: 
- ```bash
- mkdir MDE
- cd MDE # to navigate in that directory
- ```
-- Transfer the onboarding package to your Linux machine: 
-In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: scp <path_to_local_file> username@ip_address:<path_to_destination>, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
+Download the onboarding package from Microsoft Defender XDR portal<br>
+![Linux Server Onboarding Package](/assets/pictures/download_onboarding_package.png)<br>
+
+**Transfer the onboarding package to your Linux machine** 
+In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
  scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" lessi@10.0.0.97:~/MDE
 ```  
-![Linux Server Onboarding Package](/assets/pictures/download_onboarding_package.png)  
+
 On the Linux machine:
-```bash 
-ls -l MDE # to verify the presence of the onboarded ZIP file
-```
-- Unzip the onboarding package. You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file
+Unzip the onboarding package. You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file
 ```bash
 unzip WindowsDefenderATPOnboardingPackage.zip
 ```
 This will give you the _**MicrosoftDefenderATPOnboardingLinuxServer**.py_ file.
-- Client configuration
+Client configuration
 Initially the client device is not associated with an organization and the orgId attribute is blank.
 ```bash
 mdatp health --field org_id
 ``` 
- :information_source: **Note**<brTo onboard a device that was previously offboarded you must remove the _**mdatp_offboard.json**_ file located at /etc/opt/microsoft/mdatp.
-View the presence of the mdatp_offboard.json file
-```bash
-ls /etc/opt/microsoft/mdatp/ 
-```
-Remove mdatp from the device
-```bash
-sudo yum remove mdatp
-
-Remove the mdatp_onboard.json file
-```bash
-sudo rm -f /etc/opt/microsoft/mdatp/mdatp_onboard.json
-```
 
 :exclamation: Verify python3 is installed
 ```bash
-python3 --version # install python3 if it's not installed
+# Install python3 if it's not installed
+python3 --version
 ```
 Run MicrosoftDefenderATPOnboardingLinuxServer.py to onboard the Linux Server.
 ```bash
@@ -157,7 +140,7 @@ mdatp health --field real_time_protection_enabled
 ```
 If not, run the following: 
 ```bash
-sudo mdatp config real-time-protection --value enabled # to enable real-time protection
+sudo mdatp config real-time-protection --value enabled
 ```
 Test MDE on Linux by simulating the download of a "malicious" eicar file. The file should be quarantined.
 ```bash
