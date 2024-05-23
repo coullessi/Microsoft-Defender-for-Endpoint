@@ -21,9 +21,9 @@ This lab exercise will also walk you through configuring MDE features and capabi
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
 | Written Steps | Video Instructions |
 | ------------- | ------------- |
-| - [Deploy MDE on Linux Manually](./ManualOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
-| - [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
-| - [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
+| [Deploy MDE on Linux Manually](./ManualOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
+| [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
+| [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
 
 Video instructions can be found [here](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A).
 <br><br>
