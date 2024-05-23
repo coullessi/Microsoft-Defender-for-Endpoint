@@ -12,7 +12,7 @@ ssh user@ip_address
 # If you need to specify a port number
 ssh user@ip_address -p port_number
 ```
-:bulb: **Tip:** This is not needed, but you can use certificate-based authentication, so that you don't have to enter a password wehn you connect.<br><br>
+:bulb: **Tip:** This is not needed, but you can use certificate-based authentication, so that you don't have to enter a password when you connect.<br><br>
   
 ## 2. Update the server
 ```bash
