@@ -150,4 +150,13 @@ curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt
 List the detected threats
 ```bash
 mdatp threat list
-```
+``` 
+
+## 5. Configure MDE
+In Microsoft Entra ID, create the following device groups named for example ```Linux - MDE-Prod``` for your prod devices and ```Linux - MDE-Dev``` for your dev devices.<br>
+The group membership rule rules could be as follow: <br>
+```(device.managementType -eq "MicrosoftSense") and (device.deviceOSType -eq "Linux") and (device.displayName -in ["ubta","rhela","deba"])``` for the production environment devices.<br>
+```(device.managementType -eq "MicrosoftSense") and (device.deviceOSType -eq "Linux") and (device.displayName -contains "dev")``` for the development envionment devices.
+
+TODO: bash file with policy settings and screen capture from MDE portal.
+
