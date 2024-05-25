@@ -55,9 +55,9 @@ touch ~/.ssh/authorized_keys
 
 #### ```Control Node``` and ```Managed Nodes```: Create the ```known_hosts``` and the ```known_hosts.old``` files if they do not exist.
 ```bash
-# This create the known_hosts and known_hosts.old files.
+# Create the known_hosts and known_hosts.old files.
 sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old
-# In this case, the user bob is both the owner and group of the files.
+# Make the user (in this case bob) who will onboard the servers to MDE both the owner and group of the files.
 sudo chown bob:bob ~/.ssh/known_hosts ~/.ssh/known_hosts.old 
 ```
 
@@ -67,7 +67,7 @@ sudo chown bob:bob ~/.ssh/known_hosts ~/.ssh/known_hosts.old
 ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey
 
 # Create the config file if doesn't alredy exist and
-# add the following line: IdentityFile ~/.ssh/ControlNodeKey
+# add the following line: IdentityFile ~/.ssh/ControlNodeKey, save the file.
 sudo vim ~/.ssh/config 
 
 # List the content of the .ssh file. You'll have the following: config, ControlNodeKey, ControlNodeKey.pub
@@ -78,17 +78,9 @@ cat ~/.ssh/ControlNodeKey.pub
 ```
 Paste the value of the public key copied from the control node to the ```~/.ssh/authorized_keys``` file of the managed nodes.<br>
 
-#### Install Ansible on the control node (example of Ubuntu device)
+#### Install Ansible on the ```control node``` (example of Ubuntu device)
 
 ```bash
-#!/bin/bash
-
-echo "####################################################################"
-echo                          Installing pipx and Ansible
-echo "####################################################################"
-
-echo "Install pipx"
-echo
 sudo apt update
 sudo apt install pipx
 pipx ensurepath
@@ -101,12 +93,9 @@ pipx inject ansible argcomplete
 pipx inject --include-apps ansible argcomplete
 activate-global-python-argcomplete --user
 sudo pipx ensurepath
-echo
-echo
-echo "Ansible installed successfully, type 'exit' to exit the shell"
-echo "Start a new shell and run 'ansible --version' to check the version of ansible installed"
-
 ```
+Ansible installed successfully, type 'exit' to exit the shell.
+Start a new shell and run ```ansible --version``` to check the version of ansible installed.
 
 All the above commands used to configure the ```control node``` are also supplied in the [config_controlnode.sh](../../Assets/config_controlnode.sh) file. You can run that file once to generate the SSH keys and install Ansible.
 
