@@ -1,4 +1,4 @@
-# Deploy MDE on Linux with Ansible: Production Channel<br>
+# Deploy MDE on Linux with Ansible: Prod Channel<br>
 
 ### Example of environment
 - Control node: ubta
@@ -23,7 +23,7 @@ In addition to the downloaded onboarding package from the [Defender portal](http
 - [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
 - [Hosts file](./Assets/hosts): it contains the list of devices to be onboarded to MDE.<br>
 - [MDE repositories file](./Assets/add_mdatp_repo.yml): in this file, the MDE repositories (i.e. prod, insiders-fast, etc.) are specified.<br>
-- [MDE setup file](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the **mdatp_onboard.json** onboarding package on a device.<br>
+- [MDE setup file](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the ```mdatp_onboard.json``` onboarding package on a device.<br>
 - [MDE install file](./Assets/install_mdatp.yml): this file is referenced by Ansible to install MDE on a device.<br>
 - [MDE uninstall file](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.
 
@@ -44,31 +44,71 @@ The command ```ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey``` wi
 You may also need to create the the know_hosts and known_hosts.old files on the devices if they do not exist. The ```known_hosts``` and ```known_hosts.old``` files are related to SSH (Secure Shell) and play a crucial role in verifying the identity of remote servers before establishing a connection. 
 The known_hosts file stores the public keys of servers that you have connected to using SSH.
 The known_hosts.old file is a backup of the known_hosts file.<br>
-#### Generate SSH keys
-```bash
-ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey
-sudo vim ~/.ssh/config # add the following line: IdentityFile ~/.ssh/ControlNodeKey
-ls ~/.ssh/ # to view the list of files. You'll have the following: config, ControlNodeKey, ControlNodeKey.pub
-cat ~/.ssh/ControlNodeKey.pub # to display the value of the public key, copy it, you will add it to the ~/.ssh/authorized_keys file on the managed nodes.
-```
-Copy the value of the public key to the ansible managed nodes to the following file: ```~/.ssh/authorized_keys```<br>
-If either the directory ```.ssh``` or the file ```authorized_keys``` do not exist, create them.<br>
-Paste the value of the public key in the authorized_keys file and save the file.
 
-#### Create the .ssh directory and the authorized_keys file under the .ssh directory
+#### ```Control Node``` and ```Managed Nodes```: Create the ```.ssh``` directory and the ```authorized_keys``` file under the .ssh directory, if they do not exist.
 ```bash 
-mkdir ~/.ssh # to create the .ssh directory
-touch ~/.ssh/authorized_keys # to create the authorized_keys file  
+# Create the .ssh directory
+mkdir ~/.ssh 
+# Create the authorized_keys file
+touch ~/.ssh/authorized_keys   
 ```
 
-Create the ```known_hosts``` and the ```known_hosts.old``` files 
+#### ```Control Node``` and ```Managed Nodes```: Create the ```known_hosts``` and the ```known_hosts.old``` files if they do not exist.
 ```bash
-sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old # This create the known_hosts and known_hosts.old files.
-sudo chown bob:bob ~/.ssh/known_hosts ~/.ssh/known_hosts.old # In this case, the user bob is both the owner and group of the files.
+# This create the known_hosts and known_hosts.old files.
+sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old
+# In this case, the user bob is both the owner and group of the files.
+sudo chown bob:bob ~/.ssh/known_hosts ~/.ssh/known_hosts.old 
 ```
+
+#### ```Control Node```: Generate SSH keys
+```bash
+# Generate a private/public key pair
+ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey
+
+# Create the config file if doesn't alredy exist and
+# add the following line: IdentityFile ~/.ssh/ControlNodeKey
+sudo vim ~/.ssh/config 
+
+# List the content of the .ssh file. You'll have the following: config, ControlNodeKey, ControlNodeKey.pub
+ls ~/.ssh/
+
+# Display the value of the public key, copy it, you will add it to the ~/.ssh/authorized_keys file on the managed nodes.
+cat ~/.ssh/ControlNodeKey.pub
+```
+Paste the value of the public key copied from the control node to the ```~/.ssh/authorized_keys``` file of the managed nodes.<br>
+
 #### Install Ansible on the control node (example of Ubuntu device)
 
-<br>All the above commands are also supplied in the ```config_controlnode.sh``` file. You can run that file once to generate the SSH keys and install Ansible.
+```bash
+#!/bin/bash
+
+echo "####################################################################"
+echo                          Installing pipx and Ansible
+echo "####################################################################"
+
+echo "Install pipx"
+echo
+sudo apt update
+sudo apt install pipx
+pipx ensurepath
+sudo pipx ensurepath --global
+	
+pipx install --include-deps ansible
+pipx ensurepath
+pipx upgrade --include-injected ansible
+pipx inject ansible argcomplete
+pipx inject --include-apps ansible argcomplete
+activate-global-python-argcomplete --user
+sudo pipx ensurepath
+echo
+echo
+echo "Ansible installed successfully, type 'exit' to exit the shell"
+echo "Start a new shell and run 'ansible --version' to check the version of ansible installed"
+
+```
+
+All the above commands used to configure the ```control node``` are also supplied in the [config_controlnode.sh](../../Assets/config_controlnode.sh) file. You can run that file once to generate the SSH keys and install Ansible.
 
 Once Ansible is installed, log out and log back into the system.
 
@@ -87,21 +127,21 @@ In the example below that copies all files from the source folder to the destina
 - ```Source folder``` (folder containing files to be transferred): E:\Repo\Linux\MDELinux\ansible\prod 
 - ```Destination directory``` (Remote server and destination where files will be transferred): ```bob@domain.com:~/ansible.```, where ```domain.com``` can also be an ```IP address```.
 
-__Example of command__: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Linux\MDELinux\ansible\prod bob@domain.com:~/ansible```.
+Example of command: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Linux\MDELinux\ansible\prod bob@domain.com:~/ansible```.
 
 On the Linux Server, run ```ls prod``` to verify all files are copied from your local system to the Ansible control node.
 
 ### Step 6: Install mdatp
-___Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts servers -m ping``` where hosts is the list of your managed nodes and servers are specific devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.___
-___Then run  ```ansible -K install_mdatp.yml -i hosts``` to install MDE on your list of devices.___
+Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts servers -m ping``` where hosts is the list of your managed nodes and servers are specific devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
+Then run  ```ansible -K install_mdatp.yml -i hosts``` to install MDE on your list of devices.
 ```bash
 ansible -i hosts servers -m ping
 ansible-playbook -K install_mdatp.yml -i hosts
 ```
-___Verify the list of onboarded devices from the Defender portal___
+Verify the list of onboarded devices from the Defender portal
 You should end up with a list of devices after the devices are managed by MDE. Allow up to 24 hours for devices to be managed by MDE.
 
-___Create/ configure endpoint security policies for your newly onboarded devices___
+Configure endpoint security policies for your newly onboarded devices
 
 Verify the onboarding status on a device and notice that the device is managed by MDE
 Run the following command: ```mdatp health | grep -i 'managed\|managed_by\|MDE'```.
@@ -113,7 +153,7 @@ Run the following commands, for example from the home directory:
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
 #### Step 7: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices
-just in case you want to remove mdatp from devices and offboard them from a tenant.
+Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
 ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts

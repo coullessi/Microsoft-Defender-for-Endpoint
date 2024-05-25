@@ -1,5 +1,5 @@
 
-## Deploy MDE on Linux with Ansible: Development Channel (Insiders-Fast)<br>
+## Deploy MDE on Linux with Ansible: Insiders-Fast Channel<br>
 
 ## Example of environment
 - Managed node:  ubtb

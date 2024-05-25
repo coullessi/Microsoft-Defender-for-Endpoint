@@ -1,6 +1,6 @@
 ![Defender for Endpoint](./Platforms/Assets/Pictures/MDE.png)
 
-# Microsoft Defender for Endpoint Deployment Lab
+# Microsoft Defender for Endpoint - Lab
 Microsoft Defender for Endpoint, an enterprise endpoint security platform, is a primary component of the **assume breach** concept and an important element of your extended detection and response (XDR) deployment with Microsoft Defender XDR.<br>
 Defender for Endpoint uses **endpoint behavioral sensors**, **cloud security analytics**, and **threat intelligence** to form with other security solutions a unified pre-breach and post-breach enterprise defense suite for Microsoft Defender XDR. This native integration across endpoints, identity, email, and applications allows you to detect, prevent, investigate, and automatically respond to sophisticated attacks.
 
