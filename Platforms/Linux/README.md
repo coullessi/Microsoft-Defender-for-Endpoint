@@ -12,7 +12,7 @@ This lab exercise will also walk you through configuring MDE features and capabi
 
 ## Prerequisites
 - Create Linux virtual machines using Hyper-V, Azure, AWS. etc.
-- Access to the Microsoft Defender portal.
+- Access to the Microsoft Defender, Microsoft Intune, and Microsoft Entra ID portals.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
 - Linux distribution using the **_systemd_** system manager.
 - Beginner-level experience in Linux and BASH scripting.

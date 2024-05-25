@@ -1,8 +1,9 @@
 # Deploy MDE on Linux Manually
 
-<br>
+## Summary
+In this exercise the following will be covered
 
-## 1. Connect to the server: example of Red Hat Enterprise
+## 1. Connect to the server: example of RedHat Enterprise
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
 
 :bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.
@@ -54,7 +55,7 @@ ssh bob@ip_address
 ```
 
 ## 4. Install mdatp
-[RHEL and variants (CentOS, Fedora, Oracle Linux, Amazon Linux 2, Rocky and Alma)](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
+[RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
 
 Use ```hostnamectl``` command to identify system related information including distribution and release version.
 
@@ -79,14 +80,12 @@ Install the Microsoft GPG public key
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 ```
-Application installation
+Application installation - list all existing repositories
 ```bash
-# List all repositories
-yum repolist 
+yum repolist
 ```
- If you have multiple Microsoft repositories, for example, use the following command to install the package from the production channel.
+ If you have multiple Microsoft repositories, to install the package from the production channel for example, use the following command.
  ```bash 
- # to install the package from the production repository.
  sudo yum --enablerepo=packages-microsoft-com-prod install mdatp
  ```
  Set the device tag
@@ -114,9 +113,8 @@ Initially the client device is not associated with an organization and the orgId
 mdatp health --field org_id
 ``` 
 
-Verify python3 is installed
+Verify python3 is installed, if not install it
 ```bash
-# Install python3 if it's not installed
 python3 --version
 ```
 Run MicrosoftDefenderATPOnboardingLinuxServer.py to onboard the Linux Server.
@@ -153,10 +151,8 @@ mdatp threat list
 ``` 
 
 ## 5. Configure MDE
-In Microsoft Entra ID, create the following device groups named for example ```Linux - MDE-Prod``` for your prod devices and ```Linux - MDE-Dev``` for your dev devices.<br>
-The group membership rule rules could be as follow: <br>
-```(device.managementType -eq "MicrosoftSense") and (device.deviceOSType -eq "Linux") and (device.displayName -in ["ubta","rhela","deba"])``` for the production environment devices.<br>
-```(device.managementType -eq "MicrosoftSense") and (device.deviceOSType -eq "Linux") and (device.displayName -contains "dev")``` for the development envionment devices.
+- In Microsoft Entra ID, create a device group chosing the [Dynamic Device](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership#rules-for-devices) as membership type. 
+- [Set preferences for MDE](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences) on your Linux device.
 
 TODO: bash file with policy settings and screen capture from MDE portal.
 
