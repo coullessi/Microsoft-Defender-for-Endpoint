@@ -1,4 +1,8 @@
-[servers]
+[prod]
 ubta ansible_ssh_host=10.160.124.4
 rhela ansible_ssh_host=10.160.124.9
 deba ansible_ssh_host=10.160.124.10
+
+[dev]
+ubtb ansible_ssh_host=10.160.124.5
+rhelb ansible_ssh_host=10.160.124.8

@@ -29,29 +29,29 @@ The user will be added the user to the 'wheel' group, so the user can manage the
 sudo -i
 
 # Create the user and set the user's home directory with '-m'
-adduser -m bob
+adduser -m lessi
 
 # Configure the user's password
-passwd bob
+passwd lessi
 
 # Add the user to the 'wheel' (sudo) group
-usermod -aG wheel bob
+usermod -aG wheel lessi
 
 # Verify the user belongs to the 'wheel' group
-id bob
+id lessi
 
 # Login as the new user
-su - bob
+su - lessi
 ```
 or
 
  ```bash
  # Single line to create a user
- sudo useradd -m bob && sudo passwd bob && usermod -aG wheel bob
+ sudo useradd -m lessi && sudo passwd lessi && usermod -aG wheel lessi
  ```
-Now, you can connect to your Linux device using the new user's (bob) credentials:
+Now, you can connect to your Linux device using the new user's (lessi) credentials:
 ```bash
-ssh bob@ip_address
+ssh lessi@ip_address
 ```
 
 ## 4. Install mdatp
@@ -98,7 +98,7 @@ Download the onboarding package from Microsoft Defender XDR portal<br>
 **Transfer the onboarding package to your Linux machine** 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
- scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" bob@10.0.0.97:~/MDE
+ scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" lessi@10.0.0.97:~/MDE
 ```  
 
 On the Linux machine:

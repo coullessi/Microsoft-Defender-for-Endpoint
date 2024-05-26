@@ -12,11 +12,12 @@ This lab exercise will also walk you through configuring MDE features and capabi
 
 ## Prerequisites
 - Create Linux virtual machines using Hyper-V, Azure, AWS. etc.
+- Create Microsoft Entra ID ```Dynamic Device``` group.
 - Access to the Microsoft Defender, Microsoft Intune, and Microsoft Entra ID portals.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
 - Linux distribution using the **_systemd_** system manager.
 - Beginner-level experience in Linux and BASH scripting.
-- Administrative privileges on the device (in case of manual deployment).
+- Administrative privileges on the Linux device.
 
 ## Installation steps
 In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
