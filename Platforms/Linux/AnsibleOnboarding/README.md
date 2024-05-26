@@ -142,6 +142,8 @@ ansible -i hosts dev -m ping
 ansible-playbook -K dev_install_mdatp.yml -i hosts
 ```
 
+:bulb: **Tip:** You may also run the following to verify connectivity with all devices (prod & dev): ansible -i hosts prod:dev -m ping
+
 Verify the list of onboarded devices from the Defender portal
 You should end up with a list of devices after the devices are managed by MDE. Allow up to 24 hours for devices to be managed by MDE.
 
