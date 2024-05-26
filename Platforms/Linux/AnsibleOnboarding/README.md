@@ -27,10 +27,10 @@ To get the most out of this exercise, it's good to have the following knowledge:
 ## Table of Contents
 - [Step1: Configuraion Files](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-the-configuration-files)
 - [Step 2: Create SSH keys and install Ansible](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
-- [Step 3: Download onboarding package](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-onboarding-package)
+- [Step 3: Download the onboarding package](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-onboarding-package)
 - [Step 4: Copy files to the remote Linux Server (Ansible Control Node)](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-linux-server-ansible-control-node)
-- [Step 5: Install mdatp on production servers](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp-on-production-servers)
-- [Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp---do-not-run-this-unless-you-want-to-uninstall-mde-on-devices)
+- [Step 5: Install mdatp](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp-on-production-servers)
+- [Step 6: Uninstall mdatp](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp---do-not-run-this-unless-you-want-to-uninstall-mde-on-devices)
 
 :information_source: **Note**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
@@ -117,27 +117,27 @@ All the above commands used to configure the ```control node``` are also supplie
 
 Once Ansible is installed, log out and log back into the system.
 
-### Step 3: Download onboarding package
+### Step 3: Download the onboarding package
 Go to _security.microsoft.com > Settings > Endpoints > Onboarding_ and select the following:
 - ```Operation system```: Linux Server
 - ```Connectivity type```: Streamlined
 - ```Deployment method```: Your preferred Linux configuration management tool
 - ```Click Download onboarding package```.
 
-### Step 4: Copy files to the remote Linux Server (Ansible Control Node) 
-In the example below that copies all files from the source folder to the destination directory (the destination directory will be created if it doesn't exist), the following are specified:
+### Step 4: Copy files to the remote Linux Server
+In the example below that copies all files from the source folder to the destination directory on the ```control node``` (the destination directory will be created if it doesn't exist), the following are specified:
 - ```scp``` (command for a secure copy over SSH)
 - ```Port number```(port 45733 where the remote server is listening for incoming SSH requests)
 - ```Location of the SSH private key```: E:\Repo\Linux\Connect\LocalHostKey, if you do not have a key configure, you can provide a password when prompted. 
 - ```Source folder``` (folder containing files to be transferred): E:\Repo\Microsoft-Defender-for-Endpoint\Platforms\Linux\AnsibleOnboarding\Assets 
-- ```Destination directory``` (Remote server and destination where files will be transferred): ```lessi@domain.com:~/ansible```, where ```domain.com``` can also be an ```IP address```.
+- ```Destination directory``` (Remote server and destination where files will be transferred): ```lessi@domain.com:~/MDE```, where ```domain.com``` can also be an ```IP address```.
 
-Example of command: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Microsoft-Defender-for-Endpoint\Platforms\Linux\AnsibleOnboarding\Assets lessi@domain.com:~/ansible```.
+Example of command: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\Repo\Microsoft-Defender-for-Endpoint\Platforms\Linux\AnsibleOnboarding\Assets lessi@domain.com:~/MDE```.
 
 On the Linux Server, run ```ls ansible``` to verify all files are copied from your local system to the Ansible control node.
 
-### Step 5: Install ```mdatp``` on production servers
-Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
+### Step 5: Install mdatp
+You'll install ```mdatp``` on ```production servers```. Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
 Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.<br>
 :bulb: **Tip:** You may also run ```ansible -i hosts all -m ping``` or ```ansible -i hosts prod:dev -m ping``` to test connectivity with all devices (prod & dev servers): 
 ```bash
@@ -166,7 +166,8 @@ Run the following commands, for example from the home directory:
 <br>Run ``ls`` and notice that the downloaded file does not exist; it has been quarantined.
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
-### Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices
+### Step 6: Uninstall mdatp
+:exclamation: **Important**: Do not run this unless you want to remove MDE on devices.
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
 ansible -i hosts all -m ping
