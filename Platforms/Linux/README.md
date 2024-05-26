@@ -1,3 +1,5 @@
+![Defender for Endpoint](./Assets/MS-Linux.png)
+
 # Microsoft Defender for Endpoint on Linux
 
 ## Introduction
