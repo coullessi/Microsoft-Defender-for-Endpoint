@@ -26,11 +26,11 @@ To get the most out of this exercise, it's good to have the following knowledge:
 
 ## Table of Contents
 - [Step1: Configuraion Files](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-the-configuration-files)
-- [Step 2: Create SSH keys and install Ansible]()
-- [Step 3: Download onboarding package]()
-- [Step 5: Copy files to the remote Linux Server (Ansible Control Node)]()
-- [Step 5: Install mdatp on production servers]()
-- [Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices]()
+- [Step 2: Create SSH keys and install Ansible](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
+- [Step 3: Download onboarding package](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-onboarding-package)
+- [Step 4: Copy files to the remote Linux Server (Ansible Control Node)](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-linux-server-ansible-control-node)
+- [Step 5: Install mdatp on production servers](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp-on-production-servers)
+- [Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp---do-not-run-this-unless-you-want-to-uninstall-mde-on-devices)
 
 :information_source: **Note**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
