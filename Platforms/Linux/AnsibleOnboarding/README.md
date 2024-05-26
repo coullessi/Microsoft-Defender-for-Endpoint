@@ -129,7 +129,7 @@ On the Linux Server, run ```ls ansible``` to verify all files are copied from yo
 
 ### Step 6: Install ```mdatp``` on production servers
 Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
-Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.
+Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.<br>
 :bulb: **Tip:** You may also run the following to verify connectivity with all devices (prod & dev): ```ansible -i hosts prod:dev -m ping```
 ```bash
 # Make sure all servers can be reached
