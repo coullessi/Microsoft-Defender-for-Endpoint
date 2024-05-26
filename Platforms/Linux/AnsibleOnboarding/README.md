@@ -1,5 +1,16 @@
 # Deploy MDE on Linux with Ansible
-You can deploy, configure, and test MDE functionalities on development servers, and then to production servers.
+
+## Introduction
+You can deploy, configure, and test MDE functionalities on development servers, and then to production servers.<br>
+To get the most out of this exercise, it's good to have the following knowledge:<br>
+- You know how to provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
+- You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
+- You can find help for the usage of commands by typing ```command_name``` --help, or man ```command_name``` to view the full documentation for a command. 
+    - In a terminal, type for example ```apt --help``` to get a summary of the available commands and their usage for the Advanced Package Tool (APT), which is a package management system commonly used in Debian-based Linux distributions.
+    - Type for example ```man ssh-keygen``` to get the detailed documentation of the command-line utility used for generating, managing, and converting authentication keys for SSH (Secure Shell).
+- You can update a system and install applications, for example for a Debian system, run the following:<br>
+```sudo apt update && sudo apt upgrade``` to fully update the system.<br>
+```sudo apt install unzip``` to install unzip.
 
 ## Example of environment
 - ```ubta```: control node, prod channel
@@ -13,7 +24,15 @@ You can deploy, configure, and test MDE functionalities on development servers, 
 | **utba** | **rhela** | **deba**|	
 | **ubtb** | **rhelb** | |
 
-:information_source: **Some notes**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
+## Table of Contents
+- [Step1: Configuraion Files](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-the-configuration-files)
+- [Step 2: Create SSH keys and install Ansible]()
+- [Step 3: Download onboarding package]()
+- [Step 5: Copy files to the remote Linux Server (Ansible Control Node)]()
+- [Step 5: Install mdatp on production servers]()
+- [Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices]()
+
+:information_source: **Note**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
 One of the VM will be the ansible control node and all other VMs will be the managed nodes, refer to the table of devices above.
 Make sure unzip is installed on all managed nodes (Linux VMs that you need to onboard to MDE), for example:<br>
@@ -22,7 +41,7 @@ Make sure unzip is installed on all managed nodes (Linux VMs that you need to on
 ***RedHat***: ```sudo yum install unzip```
 <hr>
 
-### Step 1: The configuration files
+### Step 1: Configuration files
 In addition to the downloaded onboarding package from the [Defender portal](https://security.microsoft.com/securitysettings/endpoints), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
 
 - [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
@@ -34,17 +53,7 @@ In addition to the downloaded onboarding package from the [Defender portal](http
 - [Dev MDE install](./Assets/dev_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```dev device```.<br>
 - [MDE uninstall](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.<br>
 
-### Step 2: Assumption
-You can provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
-You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
-You can find help for the usage of commands by typing ```command_name``` --help, or man ```command_name``` to view the full documentation for a command. 
-In a terminal, type for example ```apt --help``` to get a summary of the available commands and their usage for the Advanced Package Tool (APT), which is a package management system commonly used in Debian-based Linux distributions.
-Type for example ```man ssh-keygen``` to get the detailed documentation of the command-line utility used for generating, managing, and converting authentication keys for SSH (Secure Shell).
-You can update a system and install applications, for example for a Debian system, run the following:<br>
-```sudo apt update && sudo apt upgrade``` to fully update the system.<br>
-```sudo apt install unzip``` to install unzip.
-
-### Step 3: Create SSH keys and install Ansible
+### Step 2: Create SSH keys and install Ansible
 The assumption is that the files and keys do not exist, you'll need to create them then.
 Create a private/public key pair on the Ansible control node that you'll use to automate tasks. 
 The command ```ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey``` will generate a private/public key pair and store them in the ControlNodeKey and ControlNodeKey.pub files respectively.
@@ -108,14 +117,14 @@ All the above commands used to configure the ```control node``` are also supplie
 
 Once Ansible is installed, log out and log back into the system.
 
-### Step 4: Download onboarding package
+### Step 3: Download onboarding package
 Go to _security.microsoft.com > Settings > Endpoints > Onboarding_ and select the following:
 - ```Operation system```: Linux Server
 - ```Connectivity type```: Streamlined
 - ```Deployment method```: Your preferred Linux configuration management tool
 - ```Click Download onboarding package```.
 
-### Step 5: Copy files to the remote Linux Server (Ansible Control Node) 
+### Step 4: Copy files to the remote Linux Server (Ansible Control Node) 
 In the example below that copies all files from the source folder to the destination directory (the destination directory will be created if it doesn't exist), the following are specified:
 - ```scp``` (command for a secure copy over SSH)
 - ```Port number```(port 45733 where the remote server is listening for incoming SSH requests)
@@ -127,7 +136,7 @@ Example of command: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\
 
 On the Linux Server, run ```ls ansible``` to verify all files are copied from your local system to the Ansible control node.
 
-### Step 6: Install ```mdatp``` on production servers
+### Step 5: Install ```mdatp``` on production servers
 Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
 Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.<br>
 :bulb: **Tip:** You may also run ```ansible -i hosts all -m ping``` or ```ansible -i hosts prod:dev -m ping``` to test connectivity with all devices (prod & dev servers): 
@@ -157,7 +166,7 @@ Run the following commands, for example from the home directory:
 <br>Run ``ls`` and notice that the downloaded file does not exist; it has been quarantined.
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
-#### Step 7: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices
+### Step 6: Uninstall mdatp - Do not run this unless you want to uninstall MDE on devices
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
 ansible -i hosts all -m ping
