@@ -41,7 +41,7 @@ Make sure unzip is installed on all managed nodes (Linux VMs that you need to on
 ***RedHat***: ```sudo yum install unzip```
 <hr>
 
-### Step 1: Configuration files
+## Step 1: Configuration files
 In addition to the downloaded onboarding package from the [Defender portal](https://security.microsoft.com/securitysettings/endpoints), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
 
 - [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
@@ -53,7 +53,7 @@ In addition to the downloaded onboarding package from the [Defender portal](http
 - [Dev MDE install](./Assets/dev_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```dev device```.<br>
 - [MDE uninstall](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.<br>
 
-### Step 2: Create SSH keys and install Ansible
+## Step 2: Create SSH keys and install Ansible
 The assumption is that the files and keys do not exist, you'll need to create them then.
 Create a private/public key pair on the Ansible control node that you'll use to automate tasks. 
 The command ```ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey``` will generate a private/public key pair and store them in the ControlNodeKey and ControlNodeKey.pub files respectively.
@@ -61,7 +61,7 @@ You may also need to create the the know_hosts and known_hosts.old files on the 
 The known_hosts file stores the public keys of servers that you have connected to using SSH.
 The known_hosts.old file is a backup of the known_hosts file.<br>
 
-#### ```Control Node``` and ```Managed Nodes```: Create the ```.ssh``` directory and the ```authorized_keys``` file under the .ssh directory, if they do not exist.
+- ```Control Node``` and ```Managed Nodes```: Create the ```.ssh``` directory and the ```authorized_keys``` file under the .ssh directory, if they do not exist.
 ```bash 
 # Create the .ssh directory
 mkdir ~/.ssh 
@@ -69,7 +69,7 @@ mkdir ~/.ssh
 touch ~/.ssh/authorized_keys   
 ```
 
-#### ```Control Node``` and ```Managed Nodes```: Create the ```known_hosts``` and the ```known_hosts.old``` files if they do not exist.
+- ```Control Node``` and ```Managed Nodes```: Create the ```known_hosts``` and the ```known_hosts.old``` files if they do not exist.
 ```bash
 # Create the known_hosts and known_hosts.old files.
 sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old
@@ -117,14 +117,14 @@ All the above commands used to configure the ```control node``` are also supplie
 
 Once Ansible is installed, log out and log back into the system.
 
-### Step 3: Download the onboarding package
+## Step 3: Download the onboarding package
 Go to _security.microsoft.com > Settings > Endpoints > Onboarding_ and select the following:
 - ```Operation system```: Linux Server
 - ```Connectivity type```: Streamlined
 - ```Deployment method```: Your preferred Linux configuration management tool
 - ```Click Download onboarding package```.
 
-### Step 4: Copy files to the remote Linux Server
+## Step 4: Copy files to the remote Linux Server
 In the example below that copies all files from the source folder to the destination directory on the ```control node``` (the destination directory will be created if it doesn't exist), the following are specified:
 - ```scp``` (command for a secure copy over SSH)
 - ```Port number```(port 45733 where the remote server is listening for incoming SSH requests)
@@ -136,7 +136,7 @@ Example of command: ```scp -P 45733 -i E:\Repo\Linux\Connect\LocalHostKey -r E:\
 
 On the Linux Server, run ```ls ansible``` to verify all files are copied from your local system to the Ansible control node.
 
-### Step 5: Install mdatp
+## Step 5: Install mdatp
 You'll install ```mdatp``` on ```production servers```. Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
 Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.<br>
 :bulb: **Tip:** You may also run ```ansible -i hosts all -m ping``` or ```ansible -i hosts prod:dev -m ping``` to test connectivity with all devices (prod & dev servers): 
@@ -166,7 +166,7 @@ Run the following commands, for example from the home directory:
 <br>Run ``ls`` and notice that the downloaded file does not exist; it has been quarantined.
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
-### Step 6: Uninstall mdatp
+## Step 6: Uninstall mdatp
 :exclamation: **Important**: Do not run this unless you want to remove MDE on devices.
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
