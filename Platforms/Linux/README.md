@@ -1,4 +1,4 @@
-![Defender for Endpoint](./Assets/MS-Linux.png)
+![Defender for Endpoint](./Assets/MDE-on-Linux.png)
 
 # Microsoft Defender for Endpoint on Linux
 
