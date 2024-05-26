@@ -130,6 +130,7 @@ On the Linux Server, run ```ls ansible``` to verify all files are copied from yo
 ### Step 6: Install ```mdatp``` on production servers
 Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
 Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.
+:bulb: **Tip:** You may also run the following to verify connectivity with all devices (prod & dev): ```ansible -i hosts prod:dev -m ping```
 ```bash
 # Make sure all servers can be reached
 ansible -i hosts prod -m ping
@@ -142,9 +143,7 @@ ansible -i hosts dev -m ping
 ansible-playbook -K dev_install_mdatp.yml -i hosts
 ```
 
-:bulb: **Tip:** You may also run the following to verify connectivity with all devices (prod & dev): ```ansible -i hosts prod:dev -m ping```<br>
-
-Verify the list of onboarded devices from the Defender portal
+:information_source: **Note**: Verify the list of onboarded devices from the Defender portal
 You should end up with a list of devices after the devices are managed by MDE. Allow up to 24 hours for devices to be managed by MDE.
 
 Configure endpoint security policies for your newly onboarded devices
