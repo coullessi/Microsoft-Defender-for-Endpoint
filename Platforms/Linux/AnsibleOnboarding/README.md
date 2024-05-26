@@ -77,7 +77,7 @@ sudo touch ~/.ssh/known_hosts ~/.ssh/known_hosts.old
 sudo chown lessi:lessi ~/.ssh/known_hosts ~/.ssh/known_hosts.old 
 ```
 
-#### ```Control Node```: Generate SSH keys
+- ```Control Node```: Generate SSH keys
 ```bash
 # Generate a private/public key pair
 ssh-keygen -t rsa -C "ControlNode" -f ~/.ssh/ControlNodeKey
@@ -94,8 +94,7 @@ cat ~/.ssh/ControlNodeKey.pub
 ```
 Paste the value of the public key copied from the control node to the ```~/.ssh/authorized_keys``` file of the managed nodes.<br>
 
-#### Install Ansible on the ```control node``` (example of Ubuntu device)
-
+- Install Ansible on the ```control node``` (example of Ubuntu device)
 ```bash
 sudo apt update
 sudo apt install pipx
