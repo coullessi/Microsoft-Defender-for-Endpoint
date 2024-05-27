@@ -9,7 +9,7 @@ The following steps are covered:
 - [Step 4: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-4-install-mde)
 - [Step 5: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-5-download-the-onboarding-package)
 - [Step 6: Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-transfer-the-onboarding-package-to-the-linux-machine)
-- [Step 7: Onboard the server to MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-7-configure-mde)
+- [Step 7: Onboard the server to MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-7-onboard-the-server-to-mde)
 
 ## Step 1: Connect to the server
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
