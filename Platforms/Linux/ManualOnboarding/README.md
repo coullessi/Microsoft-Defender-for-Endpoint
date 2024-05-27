@@ -129,6 +129,7 @@ Verify python3 is installed, if not install it
 ```bash
 python3 --version
 ```
+## Step 7: Onboard the server to MDE
 Run ```MicrosoftDefenderATPOnboardingLinuxServer.py``` to onboard the Linux Server.
 ```bash
 sudo python3 MicrosoftDefenderATPOnboardingLinuxServer.py
@@ -162,7 +163,7 @@ List the detected threats
 mdatp threat list
 ``` 
 
-## Step 7: Configure MDE
+## Step 8: Configure MDE
 - In Microsoft Entra ID, create a device group chosing the [Dynamic Device](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership#rules-for-devices) as membership type. 
 - [Set preferences for MDE](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences) on your Linux device.
 

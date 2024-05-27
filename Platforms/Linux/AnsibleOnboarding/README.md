@@ -4,12 +4,12 @@
 In this exercise, you'll use Ansible to deploy [Defender for Endpoint on Linux devices](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-with-ansible).<br>
 You can deploy, configure, and test MDE functionalities on development servers, and then to production servers.<br>
 The following steps are covered:<br>
-- [Step1: Configuraion Files](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
+- [Step1: Configuration Files](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
 - [Step 2: Create SSH keys and install Ansible](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
 - [Step 3: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-the-onboarding-package)
 - [Step 4: Copy files to the remote server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-server)
-- [Step 5: Install mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp)
-- [Step 6: Uninstall mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)<br><br>
+- [Step 5: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp)
+- [Step 6: Uninstall MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)<br><br>
 To get the most out of this exercise, it's good to have the following knowledge:<br>
 - You know how to provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
 - You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
@@ -44,14 +44,14 @@ Make sure unzip is installed on all managed nodes (Linux VMs that you need to on
 ## Step 1: Configuration files
 In addition to the downloaded onboarding package from the [Defender portal](https://security.microsoft.com/securitysettings/endpoints), use your favorite editor (Visual Studio code - that's what I use) to update the hosts, add_mdatp_repo.yml, onboarding_setup.yml, and install_mdatp.yml files.<br>
 
-- [Control node configuration file](./Assets/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
+- [Control node configuration file](./Assets/Config/config_controlnode.sh): bash script to configure Ansible and other settings on the control node.<br>
 - [MDE setup](./Assets/onboarding_setup.yml): this file is referenced by Ansible to register the ```mdatp_onboard.json``` onboarding package.<br>
-- [List of devices](./Assets/hosts): this file contains the list of ```prod``` and ```dev``` devices to be onboarded to MDE.<br>
-- [Prod repositories](./Assets/prod_mdatp_repo.yml): in this file, the MDE repositories for the ```prod channel```are specified.<br>
-- [Dev repositories](./Assets/dev_mdatp_repo.yml): in this file, the MDE repositories for the ```insiders-fast channel```are specified.<br>
-- [Prod MDE install](./Assets/prod_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```prod device```.<br>
-- [Dev MDE install](./Assets/dev_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```dev device```.<br>
-- [MDE uninstall](./Assets/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.<br>
+- [List of devices](./Assets/Config/hosts): this file contains the list of ```prod``` and ```dev``` devices to be onboarded to MDE.<br>
+- [Prod repositories](./Assets/Config/prod_mdatp_repo.yml): in this file, the MDE repositories for the ```prod channel```are specified.<br>
+- [Dev repositories](./Assets/Config/dev_mdatp_repo.yml): in this file, the MDE repositories for the ```insiders-fast channel```are specified.<br>
+- [Prod MDE install](./Assets/Config/prod_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```prod device```.<br>
+- [Dev MDE install](./Assets/Config/dev_install_mdatp.yml): this file is referenced by Ansible to install MDE on a ```dev device```.<br>
+- [MDE uninstall](./Assets/Config/uninstall_mdatp.yml): this file is referenced by Ansible to uninstall MDE on a device.<br>
 
 ## Step 2: Create SSH keys and install Ansible
 The assumption is that the files and keys do not exist, you'll need to create them then.
@@ -135,7 +135,7 @@ In the example below, the ```scp``` command copies all files from the source fol
 **Example of command**: ```scp -P [port_number] -i [ssh_private_key] -r [source_folder] [destination_directory]```. Replace all items in square brackets ```[]``` with their corresponding values.<br>
 On the Linux Server, run the ```ls [destination_directory]``` to verify that all files are copied from your local system to the Ansible control node.
 
-## Step 5: Install mdatp
+## Step 5: Install MDE
 You'll install ```mdatp``` on ```production servers```. Verify that you can communicate with all ansible nodes that you want to onboard by running ```ansible -i hosts prod -m ping``` where ```hosts``` is the list of all your managed nodes and ```prod``` the group of production devices within that list. Make sure you have a "SUCCESS" for all pings and that python3 is discovered.
 Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on your list of devices.<br>
 :bulb: **Tip:** You may also run ```ansible -i hosts all -m ping``` or ```ansible -i hosts prod:dev -m ping``` to test connectivity with all devices (prod & dev servers): 
@@ -165,7 +165,7 @@ Run the following commands, for example from the home directory:
 <br>Run ``ls`` and notice that the downloaded file does not exist; it has been quarantined.
 <br>Run ```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
 
-## Step 6: Uninstall mdatp
+## Step 6: Uninstall MDE
 :exclamation: **Important**: Do not run this unless you want to remove MDE on devices.
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
