@@ -1,7 +1,7 @@
 # Deploy MDE on Linux Manually
 
 ## Summary
-In this exercise, we'll onboard a RedHat Enterprise Linux device to Microsoft Defender for Endpoint. The following steps will be covered:
+In this exercise, you'll onboard a RedHat Enterprise Linux device to Microsoft Defender for Endpoint. The following steps will be covered:
 - [Step 1: Connect to the server]()
 - [Step 2: Update the server]()
 - [Step 3: Create a user]()
@@ -114,14 +114,12 @@ In Linux, we can share files between computers using scp. scp utilizes ssh to se
  scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
 ```  
 
-On the Linux machine:
-Unzip the onboarding package. You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file
+On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
 ```bash
 unzip WindowsDefenderATPOnboardingPackage.zip
 ```
-This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.
-Client configuration
-Initially the client device is not associated with an organization and the orgId attribute is blank.
+This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.<br>
+Initially the client device is not associated with an organization and the org_id attribute is blank.
 ```bash
 mdatp health --field org_id
 ``` 
@@ -138,15 +136,15 @@ sudo python3 MicrosoftDefenderATPOnboardingLinuxServer.py
 ```bash
 mdatp health --field org_id
 ```
-Check the health status of the product. A return value of 'true' denotes that the product is functioning as expected.
+Check the health status of the product. A return value of ```true``` denotes that the product is functioning as expected.
 ```bash
 mdatp health --field healthy
 ```    
-Check the status of the definition update, return value should be up_to_date.
+Check the status of the definition update, return value should be ```up_to_date```.
 ```bash
 mdatp health --field definitions_status
 ```
-Ensure real-time protection is enabled, the return value should be true.
+Ensure real-time protection is enabled, the return value should be ```true```.
 ```bash
 mdatp health --field real_time_protection_enabled
 ```
@@ -154,7 +152,7 @@ If not, run the following:
 ```bash
 sudo mdatp config real-time-protection --value enabled
 ```
-Test MDE on Linux by simulating the download of a "malicious" eicar file. The file should be quarantined.
+Test MDE on Linux by simulating the download of the ```eicar``` [file](https://www.eicar.org/download-anti-malware-testfile/). The file should be quarantined.
 ```bash
 curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt
 ```
