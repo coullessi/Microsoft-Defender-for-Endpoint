@@ -4,10 +4,10 @@
 Make sure ```unzip``` is installed on the Linux you are going to onboard From the Defender portal, download the onboarding package. Then, copy the ```onboarding package``` and the ```installer script``` to the Linux server you want to onboard
 
 ## Table of Contents
-- [Step 1: Download the onboarding package]()
-- [Step 2: Copy files to the server to onboard]()
-- [Step 3: Install MDE]()
-- [Step 4: Uninstall MDE]()
+- [Step 1: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-1-download-the-onboarding-package)
+- [Step 2: Copy files to the server to onboard](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-2-copy-files-to-the-server-to-onboard)
+- [Step 3: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-3-install-mde)
+- [Step 4: Uninstall MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-4-uninstall-mde)
 
 ## Step 1: Download the onboarding package
 Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and select the following:

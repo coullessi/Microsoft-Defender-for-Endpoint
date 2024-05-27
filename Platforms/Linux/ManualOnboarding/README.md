@@ -2,13 +2,13 @@
 
 ## Summary
 In this exercise, you'll onboard a RedHat Enterprise Linux device to Microsoft Defender for Endpoint. The following steps will be covered:
-- [Step 1: Connect to the server]()
-- [Step 2: Update the server]()
-- [Step 3: Create a user]()
-- [Step 4: Install MDE]()
-- [Step 5: Download the onboarding package]()
-- [Step 6:Transfer the onboarding package to your Linux machine]()
-- [Step 7: Configure MDE]()
+- [Step 1: Connect to the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-1-connect-to-the-server)
+- [Step 2: Update the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-2-update-the-server)
+- [Step 3: Create a user](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-3-create-a-user)
+- [Step 4: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-4-install-mde)
+- [Step 5: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-5-download-the-onboarding-package)
+- [Step 6:Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-transfer-the-onboarding-package-to-your-linux-machine)
+- [Step 7: Configure MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-7-configure-mde)
 
 ## Step 1: Connect to the server
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
@@ -108,7 +108,7 @@ Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and selec
 ![download_package](./Assets/Pictures//download_package.png)
 
 
-## Step 6: Transfer the onboarding package to your Linux machine 
+## Step 6: Transfer the onboarding package to the Linux machine 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
  scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
