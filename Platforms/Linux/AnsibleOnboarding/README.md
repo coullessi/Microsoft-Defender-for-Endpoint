@@ -118,10 +118,11 @@ Once Ansible is installed, log out and log back into the system.
 
 ## Step 3: Download the onboarding package
 Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and select the following:
-- ```Operation system```: Linux Server
-- ```Connectivity type```: Streamlined
-- ```Deployment method```: Your preferred Linux configuration management tool
-- ```Click Download onboarding package```.
+- Operation system: ```Linux Server```
+- Connectivity type: ```Streamlined```
+- Deployment method: ```Your preferred Linux configuration management tool```
+- Click: ```Download onboarding package```.<br>
+![download_package](./Assets/Pictures//download_package.png)
 
 ## Step 4: Copy files to the remote server
 In the example below, the ```scp``` command copies all files from the source folder to the destination directory on the ```control node``` (the destination directory will be created if it doesn't exist):
@@ -171,7 +172,7 @@ Just in case you want to remove mdatp from devices and offboard them from a tena
 ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts
 ```
-
+<br>
 <hr>
 
 [![LinkeIn](../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)

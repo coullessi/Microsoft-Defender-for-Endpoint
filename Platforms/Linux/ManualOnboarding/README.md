@@ -1,9 +1,16 @@
 # Deploy MDE on Linux Manually
 
 ## Summary
-In this exercise the following will be covered
+In this exercise, we'll onboard a RedHat Enterprise Linux device to Microsoft Defender for Endpoint. The following steps will be covered:
+- [Step 1: Connect to the server]()
+- [Step 2: Update the server]()
+- [Step 3: Create a user]()
+- [Step 4: Install MDE]()
+- [Step 5: Download the onboarding package]()
+- [Step 6:Transfer the onboarding package to your Linux machine]()
+- [Step 7: Configure MDE]()
 
-## 1. Connect to the server: example of RedHat Enterprise
+## Step 1: Connect to the server
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
 
 :bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.
@@ -16,12 +23,12 @@ ssh user@ip_address -p port_number
 :bulb: **Tip:** This is not needed, but you can use certificate-based authentication, so that you don't have to enter a password when you connect.
   
 
-## 2. Update the server
+## Step 2: Update the server
 ```bash
 sudo yum update && sudo yum upgrade
 ```
 
-## 3. Create a user 
+## Step 3: Create a user 
 The user will be added the user to the 'wheel' group, so the user can manage the server. This step is not really needed. But this is to avoid login onto the server as root. You can create a user with multiple lines of commands or a single line of command.
 
 ```bash
@@ -54,7 +61,7 @@ Now, you can connect to your Linux device using the new user's (lessi) credentia
 ssh lessi@ip_address
 ```
 
-## 4. Install mdatp
+## Step 4: Install MDE
 [RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
 
 Use ```hostnamectl``` command to identify system related information including distribution and release version.
@@ -92,13 +99,19 @@ yum repolist
  ```bash
  sudo mdatp edr tag set --name GROUP --value 'MDE-Management'
  ```        
-Download the onboarding package from Microsoft Defender XDR portal<br>
-![Linux Server Onboarding Package](/assets/pictures/download_onboarding_package.png)<br>
+## Step 5: Download the onboarding package
+Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and select the following:
+- Operation system: ```Linux Server```
+- Connectivity type: ```Streamlined```
+- Deployment method: ```Local Script (Python)```
+- Click: ```Download onboarding package```.<br>
+![download_package](./Assets/Pictures//download_package.png)
 
-**Transfer the onboarding package to your Linux machine** 
+
+## Step 6: Transfer the onboarding package to your Linux machine 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```bash
- scp "E:\MDE\Linux\WindowsDefenderATPOnboardingPackage.zip" lessi@10.0.0.97:~/MDE
+ scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
 ```  
 
 On the Linux machine:
@@ -106,7 +119,7 @@ Unzip the onboarding package. You'll get the MicrosoftDefenderATPOnboardingLinux
 ```bash
 unzip WindowsDefenderATPOnboardingPackage.zip
 ```
-This will give you the _**MicrosoftDefenderATPOnboardingLinuxServer**.py_ file.
+This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.
 Client configuration
 Initially the client device is not associated with an organization and the orgId attribute is blank.
 ```bash
@@ -117,7 +130,7 @@ Verify python3 is installed, if not install it
 ```bash
 python3 --version
 ```
-Run MicrosoftDefenderATPOnboardingLinuxServer.py to onboard the Linux Server.
+Run ```MicrosoftDefenderATPOnboardingLinuxServer.py``` to onboard the Linux Server.
 ```bash
 sudo python3 MicrosoftDefenderATPOnboardingLinuxServer.py
 ```
@@ -150,9 +163,12 @@ List the detected threats
 mdatp threat list
 ``` 
 
-## 5. Configure MDE
+## Step 7: Configure MDE
 - In Microsoft Entra ID, create a device group chosing the [Dynamic Device](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership#rules-for-devices) as membership type. 
 - [Set preferences for MDE](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences) on your Linux device.
 
-TODO: bash file with policy settings and screen capture from MDE portal.
+<br>
+<hr>
 
+[![LinkeIn](../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
