@@ -8,6 +8,7 @@ Make sure ```unzip``` is installed on the Linux you are going to onboard From th
 - [Copy onboarding files to server to onboard]()
 
 ## Install MDE
+Before you run the bash script below, replace ```onboarding_package``` with the package you download from your Defender portal.
 ```bash
 #!/bin/bash
 
@@ -15,15 +16,16 @@ mkdir MDE
 cd MDE
 curl -o mde_installer.sh https://raw.githubusercontent.com/microsoft/mdatp-xplat/master/linux/installation/mde_installer.sh
 sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
-sudo ./mde_installer.sh --install --channel prod --onboard ./MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "MDE-Management" --min_req -y
+sudo ./mde_installer.sh --install --channel prod --onboard [onboarding_package] --tag GROUP "MDE-Management" --min_req -y
 ```
 
 ## Uninstall MDE
+Before you run the bash script below, replace ```onboarding_package``` with the package you download from your Defender portal.
 ```bash
 #!/bin/bash
 
 sudo unzip WindowsDefenderATPOffboardingPackage_valid_until_2024-04-30.zip
-sudo ./mde_installer.sh --remove --onboard ./MicrosoftDefenderATPOffboardingLinuxServer_valid_until_2024-04-30.py
+sudo ./mde_installer.sh --remove --onboard [offboarding_package]
 ```
 
 ## Reference Documents
