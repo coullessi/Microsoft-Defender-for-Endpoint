@@ -31,15 +31,13 @@ On the Linux Server, run the ```ls [destination_directory]``` to verify that all
 ## Step 3: Install MDE
 Run the following commands to onboard the server to MDE.
 ```bash
-#!/bin/bash
-
 mkdir MDE
 cd MDE
 curl -o mde_installer.sh https://raw.githubusercontent.com/microsoft/mdatp-xplat/master/linux/installation/mde_installer.sh
 sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "MDE-Management" --min_req -y
 ```
-Intead of running the above commands individually, you may also run the [bash script]() to onboard the server.
+Intead of running the above commands individually, you may also run the [bash script](install_mde.sh) to onboard the server.
 
 ## Step 4: Uninstall MDE
 Download the ```offboarding package``` from the Defender portal.<br>
