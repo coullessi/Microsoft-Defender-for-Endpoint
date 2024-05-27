@@ -7,7 +7,7 @@ In this exercise, you'll onboard a RedHat Enterprise Linux device to Microsoft D
 - [Step 3: Create a user](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-3-create-a-user)
 - [Step 4: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-4-install-mde)
 - [Step 5: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-5-download-the-onboarding-package)
-- [Step 6:Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-transfer-the-onboarding-package-to-your-linux-machine)
+- [Step 6: Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-transfer-the-onboarding-package-to-the-linux-machine)
 - [Step 7: Configure MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-7-configure-mde)
 
 ## Step 1: Connect to the server
