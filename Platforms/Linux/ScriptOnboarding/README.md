@@ -42,7 +42,7 @@ sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPO
 Intead of running the above commands individually, you may also run the [bash script]() to onboard the server.
 
 ## Step 4: Uninstall MDE
-Download the ```offboarding package``` from the Defender portal.
+Download the ```offboarding package``` from the Defender portal.<br>
 :exclamation: Before you run the command below, replace ```offboarding_package``` with the package you downloaded from your Defender portal.
 ```bash
 sudo ./mde_installer.sh --remove --onboard [offboarding_package]
