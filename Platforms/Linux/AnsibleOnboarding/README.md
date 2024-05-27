@@ -5,7 +5,7 @@ You can deploy, configure, and test MDE functionalities on development servers, 
 To get the most out of this exercise, it's good to have the following knowledge:<br>
 - You know how to provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
 - You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
-- You can find help for the usage of commands by typing ```command_name``` --help, or man ```command_name``` to view the full documentation for a command. 
+- You can find help for the usage of commands by typing ```command_name --help```, or ```man command_name``` to view the full documentation for a command. 
     - In a terminal, type for example ```apt --help``` to get a summary of the available commands and their usage for the Advanced Package Tool (APT), which is a package management system commonly used in Debian-based Linux distributions.
     - Type for example ```man ssh-keygen``` to get the detailed documentation of the command-line utility used for generating, managing, and converting authentication keys for SSH (Secure Shell).
 - You can update a system and install applications, for example for a Debian system, run the following:<br>
@@ -25,12 +25,12 @@ To get the most out of this exercise, it's good to have the following knowledge:
 | **ubtb** | **rhelb** | |
 
 ## Table of Contents
-- [Step1: Configuraion Files](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
-- [Step 2: Create SSH keys and install Ansible](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
-- [Step 3: Download the onboarding package](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-the-onboarding-package)
-- [Step 4: Copy files to the remote server](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-server)
-- [Step 5: Install mdatp](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp)
-- [Step 6: Uninstall mdatp](https://github.com/lcoul/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)
+- [Step1: Configuraion Files](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
+- [Step 2: Create SSH keys and install Ansible](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
+- [Step 3: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-the-onboarding-package)
+- [Step 4: Copy files to the remote server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-server)
+- [Step 5: Install mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp)
+- [Step 6: Uninstall mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)
 
 :information_source: **Note**: in this lab exercise, you do not need to login as the root user to run commands. Only make sure that the user running the commands is part of the _**sudo**_ group for Debian-based (for example Ubuntu) systems and the _**wheel**_ group for a RedHat Enterprise system.
 You need to determine the code for Debian-based systems, you'll need to specify the codename when you add the repositories for 'mdatp' to your configuration file 'add_mdatp_repo.yml'. Run ```lsb_release -a``` to find the codename: in this lab, the codename is jammy for Ubuntu 22.04 and bullseye for Debian 11.
