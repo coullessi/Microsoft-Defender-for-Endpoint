@@ -1,13 +1,14 @@
 # Deploy MDE on Linux with Ansible
 
 ## What is the lab exercise about?
+In this exercise, you'll use Ansible to deploy [Defender for Endpoint on Linux devices](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-with-ansible).<br>
 You can deploy, configure, and test MDE functionalities on development servers, and then to production servers. The following steps will be covered:<br>
 - [Step1: Configuraion Files](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
 - [Step 2: Create SSH keys and install Ansible](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
 - [Step 3: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-the-onboarding-package)
 - [Step 4: Copy files to the remote server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-4-copy-files-to-the-remote-server)
 - [Step 5: Install mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-5-install-mdatp)
-- [Step 6: Uninstall mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)
+- [Step 6: Uninstall mdatp](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-6-uninstall-mdatp)<br>
 To get the most out of this exercise, it's good to have the following knowledge:<br>
 - You know how to provision Linux VMs using Hyper-V, Azure, or any other virtualization platform.
 - You can configure and exchange communication keys between devices; SSH is correctly configured, and you can transfer files between devices.
