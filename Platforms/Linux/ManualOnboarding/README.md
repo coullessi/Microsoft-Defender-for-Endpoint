@@ -119,7 +119,7 @@ On the Linux machine, unzip the onboarding package (you may need to install ```u
 unzip WindowsDefenderATPOnboardingPackage.zip
 ```
 This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.<br>
-Initially the client device is not associated with an organization and the org_id attribute is blank.
+Initially the client device is not associated with an organization and the ```org_id``` attribute is blank.
 ```bash
 mdatp health --field org_id
 ``` 

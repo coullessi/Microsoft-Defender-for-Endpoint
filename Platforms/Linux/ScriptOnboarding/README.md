@@ -29,7 +29,7 @@ In the example below, the ```scp``` command copies all files from the source fol
 On the Linux Server, run the ```ls [destination_directory]``` to verify that all files are copied from your local system to the Ansible control node.
 
 ## Step 3: Install MDE
-Before you run the bash script below, replace ```onboarding_package``` with the package you download from your Defender portal.
+Run the following commands to onboard the server to MDE.
 ```bash
 #!/bin/bash
 
@@ -37,15 +37,14 @@ mkdir MDE
 cd MDE
 curl -o mde_installer.sh https://raw.githubusercontent.com/microsoft/mdatp-xplat/master/linux/installation/mde_installer.sh
 sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
-sudo ./mde_installer.sh --install --channel prod --onboard [onboarding_package] --tag GROUP "MDE-Management" --min_req -y
+sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "MDE-Management" --min_req -y
 ```
+Intead of running the above commands individually, you may also run the [bash script]() to onboard the server.
 
 ## Step 4: Uninstall MDE
-Before you run the bash script below, replace ```onboarding_package``` with the package you download from your Defender portal.
+Download the ```offboarding package``` from the Defender portal.
+:exclamation: Before you run the command below, replace ```offboarding_package``` with the package you downloaded from your Defender portal.
 ```bash
-#!/bin/bash
-
-sudo unzip WindowsDefenderATPOffboardingPackage_valid_until_2024-04-30.zip
 sudo ./mde_installer.sh --remove --onboard [offboarding_package]
 ```
 <br>
