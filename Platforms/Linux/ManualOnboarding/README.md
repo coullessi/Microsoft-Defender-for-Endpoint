@@ -1,7 +1,8 @@
 # Deploy MDE on Linux Manually
 
 ## What is the lab exercise about?
-In this exercise, you'll [onboard](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually) a RedHat Enterprise Linux device to Microsoft Defender for Endpoint. The following steps are covered:
+In this exercise, you'll [onboard](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually) a RedHat Enterprise Linux device to Microsoft Defender for Endpoint.<br> 
+The following steps are covered:
 - [Step 1: Connect to the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-1-connect-to-the-server)
 - [Step 2: Update the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-2-update-the-server)
 - [Step 3: Create a user](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-3-create-a-user)

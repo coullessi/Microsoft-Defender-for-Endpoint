@@ -2,7 +2,8 @@
 
 ## What is the lab exercise about?
 In this exercise, you'll use Ansible to deploy [Defender for Endpoint on Linux devices](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-with-ansible).<br>
-You can deploy, configure, and test MDE functionalities on development servers, and then to production servers. The following steps are covered:<br>
+You can deploy, configure, and test MDE functionalities on development servers, and then to production servers.<br>
+The following steps are covered:<br>
 - [Step1: Configuraion Files](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-1-configuration-files)
 - [Step 2: Create SSH keys and install Ansible](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-2-create-ssh-keys-and-install-ansible)
 - [Step 3: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/AnsibleOnboarding/README.md#step-3-download-the-onboarding-package)

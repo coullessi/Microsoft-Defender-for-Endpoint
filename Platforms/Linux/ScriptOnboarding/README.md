@@ -1,7 +1,8 @@
 # Deploy MDE on Linux with a Script
 
 ## What is the lab exercise about?
-In this exercise, you'll use an [automated script](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually#installer-script) to onboard a device to Microsoft Defender for Endpoint. The script identifies the distribution and version, simplifies the selection of the right repository, sets up the device to pull the latest package, and combines the product installation and onboarding steps.The following steps are covered:<br>
+In this exercise, you'll use an [automated script](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually#installer-script) to onboard a device to Microsoft Defender for Endpoint. The script identifies the distribution and version, simplifies the selection of the right repository, sets up the device to pull the latest package, and combines the product installation and onboarding steps.<br>
+The following steps are covered:
 - [Step 1: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-1-download-the-onboarding-package)
 - [Step 2: Copy files to the server to onboard](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-2-copy-files-to-the-server-to-onboard)
 - [Step 3: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-3-install-mde)
