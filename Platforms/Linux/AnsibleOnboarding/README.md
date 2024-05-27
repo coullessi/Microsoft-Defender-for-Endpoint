@@ -173,3 +173,7 @@ ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts
 ```
 
+<hr>
+
+[![LinkeIn](../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
