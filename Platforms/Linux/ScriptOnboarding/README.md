@@ -1,9 +1,7 @@
 # Deploy MDE on Linux with a Script
 
-## Introduction
-Make sure ```unzip``` is installed on the Linux you are going to onboard From the Defender portal, download the onboarding package. Then, copy the ```onboarding package``` and the ```installer script``` to the Linux server you want to onboard
-
-## Table of Contents
+## What is the lab exercise about?
+Make sure ```unzip``` is installed on the Linux you are going to onboard From the Defender portal, download the onboarding package. Then, copy the ```onboarding package``` and the ```installer script``` to the Linux server you want to onboard. The following steps will be covered:<br>
 - [Step 1: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-1-download-the-onboarding-package)
 - [Step 2: Copy files to the server to onboard](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-2-copy-files-to-the-server-to-onboard)
 - [Step 3: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ScriptOnboarding/README.md#step-3-install-mde)
