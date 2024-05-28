@@ -6,9 +6,9 @@ The following steps are covered:
 - [Step 1: Connect to the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-1-connect-to-the-server)
 - [Step 2: Update the server](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-2-update-the-server)
 - [Step 3: Create a user](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-3-create-a-user)
-- [Step 4: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-4-install-mde)
-- [Step 5: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-5-download-the-onboarding-package)
-- [Step 6: Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-transfer-the-onboarding-package-to-the-linux-machine)
+- [Step 4: Download the onboarding package](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-4-download-the-onboarding-package)
+- [Step 5: Transfer the onboarding package to the Linux machine](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-5-transfer-the-onboarding-package-to-the-linux-machine)
+- [Step 6: Install MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-6-install-mde)
 - [Step 7: Onboard the server to MDE](https://github.com/coullessi/Microsoft-Defender-for-Endpoint/blob/main/Platforms/Linux/ManualOnboarding/README.md#step-7-onboard-the-server-to-mde)
 
 ## Step 1: Connect to the server
@@ -37,32 +37,62 @@ The user will be added the user to the 'wheel' group, so the user can manage the
 sudo -i
 
 # Create the user and set the user's home directory with '-m'
-adduser -m lessi
+adduser -m bob
 
 # Configure the user's password
-passwd lessi
+passwd bob
 
 # Add the user to the 'wheel' (sudo) group
-usermod -aG wheel lessi
+usermod -aG wheel bob
 
 # Verify the user belongs to the 'wheel' group
-id lessi
+id bob
 
 # Login as the new user
-su - lessi
+su - bob
 ```
 or
 
  ```bash
  # Single line to create a user
- sudo useradd -m lessi && sudo passwd lessi && usermod -aG wheel lessi
+ sudo useradd -m bob && sudo passwd bob && sudo usermod -aG wheel bob
  ```
-Now, you can connect to your Linux device using the new user's (lessi) credentials:
+Now, you can connect to your Linux device using the new user's (bob) credentials:
 ```bash
-ssh lessi@ip_address
+ssh bob@ip_address
 ```
 
-## Step 4: Install MDE
+## Step 4: Download the onboarding package
+Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and select the following:
+- Operation system: ```Linux Server```
+- Connectivity type: ```Streamlined```
+- Deployment method: ```Local Script (Python)```
+- Click: ```Download onboarding package```.<br>
+![download_package](./Assets/Pictures//download_package.png)
+
+
+## Step 5: Transfer the onboarding package to the Linux machine 
+In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
+```bash
+ scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
+```  
+
+On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
+```bash
+unzip WindowsDefenderATPOnboardingPackage.zip
+```
+This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.<br>
+Initially the client device is not associated with an organization and the ```org_id``` attribute is blank.
+```bash
+mdatp health --field org_id
+``` 
+
+Verify python3 is installed, if not install it
+```bash
+python3 --version
+```
+
+## Step 6: Install MDE
 [RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
 
 Use ```hostnamectl``` command to identify system related information including distribution and release version.
@@ -100,35 +130,7 @@ yum repolist
  ```bash
  sudo mdatp edr tag set --name GROUP --value 'MDE-Management'
  ```        
-## Step 5: Download the onboarding package
-Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and select the following:
-- Operation system: ```Linux Server```
-- Connectivity type: ```Streamlined```
-- Deployment method: ```Local Script (Python)```
-- Click: ```Download onboarding package```.<br>
-![download_package](./Assets/Pictures//download_package.png)
 
-
-## Step 6: Transfer the onboarding package to the Linux machine 
-In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
-```bash
- scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
-```  
-
-On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
-```bash
-unzip WindowsDefenderATPOnboardingPackage.zip
-```
-This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.<br>
-Initially the client device is not associated with an organization and the ```org_id``` attribute is blank.
-```bash
-mdatp health --field org_id
-``` 
-
-Verify python3 is installed, if not install it
-```bash
-python3 --version
-```
 ## Step 7: Onboard the server to MDE
 Run ```MicrosoftDefenderATPOnboardingLinuxServer.py``` to onboard the Linux Server.
 ```bash
