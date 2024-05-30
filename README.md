@@ -10,6 +10,7 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 - ~~[Deployment Lab: MDE on Windows](./Platforms/Windows/README.md)~~: Coming soon...
 - ~~[Deployment Lab: MDE on macOS](./Platforms/macOS/README.md)~~: Coming soon...
 - ~~[Deployment Lab: MDE on iOS](./Platforms/iOS/README.md)~~: Coming soon...
+- ~~[Deployment Lab: MDE on Android](./Platforms/Android/README.md)~~: Coming soon...
 
 <br>
 
@@ -17,7 +18,8 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 [Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)<br>
 [Deploy Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)<br>
 [Deploy Microsoft Defender for Endpoint on macOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac)<br>
-[Deploy Microsoft Defender for Endpoint on iOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-ios)
+[Deploy Microsoft Defender for Endpoint on iOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-ios)<br>
+[Deploy Microsoft Defender for Endpoint on Android](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-android)
 
 <br>
 <hr>
