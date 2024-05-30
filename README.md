@@ -15,8 +15,8 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 
 ## Reference Documents
 [Deploy Microsoft Defender for Endpoint on Windows](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide)<br>
-[Deploy Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)
-[Deploy Microsoft Defender for Endpoint on macOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac)
+[Deploy Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)<br>
+[Deploy Microsoft Defender for Endpoint on macOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac)<br>
 [Deploy Microsoft Defender for Endpoint on iOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-ios)
 
 <br>
