@@ -14,12 +14,13 @@ The following steps are covered:
 ## Step 1: Connect to the server
 From a terminal session, connect to a Linux VM using the command: ```ssh user@ip_address``` or ```ssh user@ip_address -p port_number``` if you are connecting to a port other then TCP port 22.<br>
 
-:bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.
+:bulb: **Tip:** The ```IP address``` can also be the ```FQDN``` of the server you are connecting to.<br>
+Example of command
 ```bash
 # Connect using an IP address
-ssh user@ip_address
+ssh bob@10.0.0.10
 # If you need to specify a port number
-ssh user@ip_address -p port_number
+ssh bob@10.0.0.10 -p 2222
 ```
 :bulb: **Tip:** This is not needed, but you can use certificate-based authentication, so that you don't have to enter a password when you connect.
   
@@ -73,8 +74,8 @@ Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and selec
 
 ## Step 5: Transfer the onboarding package to the Linux machine 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
-```bash
- scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.97:~/MDE
+```PowerShell
+ scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.10:~/MDE
 ```  
 
 On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
