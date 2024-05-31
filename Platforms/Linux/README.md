@@ -3,13 +3,13 @@
 # Microsoft Defender for Endpoint on Linux
 
 ## Introduction
-:memo:**What this lab IS / IS NOT**<br>
+:memo:**What this lab IS / IS NOT about**<br>
 
 **This lab is not about** teaching you the administration of a Linux device.<br>
-**This lab is about** providing steps to ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
+**This lab is about** providing you steps to ramp up with onboarding Microsoft Defender for Endpoint (MDE) on Linux. 
 This lab exercise will also walk you through configuring MDE features and capabilities. Using a profile, you will configure MDE preferences (which take precedence over the ones set locally a the device). In other words, users in the enterprise will not be able to change preferences that are set through the configuration profile.
 
-:information_source: **Note:** In this lab I use ```vim``` and ```Visual Studio Code``` to edit files. You can use you favorite text editor.
+:information_source: **Note:** In this lab I use ```vim``` and ```Visual Studio Code``` to edit files. You can use your favorite text editor.
 
 
 ## Prerequisites
