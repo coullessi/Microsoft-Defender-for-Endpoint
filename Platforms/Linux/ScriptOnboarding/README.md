@@ -47,5 +47,5 @@ sudo ./mde_installer.sh --remove --onboard [offboarding_package]
 <br>
 <hr>
 
-[![LinkeIn](../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
-[![YouTube](../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+[![LinkeIn](../../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](../../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
