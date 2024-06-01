@@ -13,7 +13,7 @@ This lab exercise will also walk you through configuring MDE features and capabi
 
 
 ## Prerequisites
-- Create Linux virtual machines using Hyper-V, Azure, AWS. etc.
+- Create Linux virtual machines using [Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager#create-a-virtual-machine), [Microsoft Azure](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu), [Amazon Web Services - AWS](https://aws.amazon.com/getting-started/launch-a-virtual-machine-B-0/). etc.
 - Create Microsoft Entra ID ```Dynamic Device``` group.
 - Access to the Microsoft Defender, Microsoft Intune, and Microsoft Entra ID portals.
 - Ensure that you have a Microsoft Defender for Endpoint subscription.
