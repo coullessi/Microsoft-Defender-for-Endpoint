@@ -6,7 +6,7 @@ echo "Downloading the hoss file, containing the IP addresses of the managed node
 curl -o hosts "https://raw.githubusercontent.com/coullessi/Microsoft-Defender-for-Endpoint/main/Platforms/Linux/AnsibleOnboarding/Assets/Config/hosts"
 
 echo "Downloading the onboard_setup.yml file"
-curl -o onboard_setup.yml "https://raw.githubusercontent.com/coullessi/Microsoft-Defender-for-Endpoint/main/Platforms/Linux/AnsibleOnboarding/Assets/Config/onboard_setup.yml"
+curl -o onboard_setup.yml "https://raw.githubusercontent.com/coullessi/Microsoft-Defender-for-Endpoint/main/Platforms/Linux/AnsibleOnboarding/Assets/Config/onboarding_setup.yml"
 
 echo "Downloading the dev_install_mdatp.yml file"
 curl -o dev_install_mdatp.yml "https://raw.githubusercontent.com/coullessi/Microsoft-Defender-for-Endpoint/main/Platforms/Linux/AnsibleOnboarding/Assets/Config/dev_install_mdatp.yml"
