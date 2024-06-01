@@ -5,8 +5,10 @@ Microsoft Defender for Endpoint, an enterprise endpoint security platform, is a 
 Defender for Endpoint uses **endpoint behavioral sensors**, **cloud security analytics**, and **threat intelligence** to form with other security solutions,```Microsoft Defender for Identity```, ```Microsoft Defender for Office 365```, and  ```Microsoft Defender for Cloud Apps``` a unified pre-breach and post-breach enterprise defense suite for Microsoft Defender XDR. This native integration across endpoints, identity, email, and applications allows you to prevent, detect, investigate, and automatically respond to sophisticated attacks.
 
 ## Deploy Microsoft Defender for Endpoint
-In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Windows and Linux Devices.
+In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Windows and Linux Devices.<br>
 - [Deployment Lab: MDE on Linux](./Platforms/Linux/README.md)
+
+Defender for Endpoint on ```Windows```, ```macOS```, ```iOS```, and ```Android``` is not yet part of the lab exercise.
 - ~~[Deployment Lab: MDE on Windows](./Platforms/Windows/README.md)~~: Coming soon...
 - ~~[Deployment Lab: MDE on macOS](./Platforms/macOS/README.md)~~: Coming soon...
 - ~~[Deployment Lab: MDE on iOS](./Platforms/iOS/README.md)~~: Coming soon...
