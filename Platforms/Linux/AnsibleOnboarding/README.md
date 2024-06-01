@@ -163,7 +163,7 @@ Run a threat detection test
 Run the following commands, for example from the home directory: <br>
 ```curl -o eicar.com.txt "https://secure.eicar.org/eicar.com.txt"``` to donwnload the eicar file.<br>
 ``ls`` and notice that the downloaded file does not exist; it has been quarantined.<br>
-```mdatp threat list``` to view the list of threat found, also notice the quarantined status.You'll also be able to view the correponding alert/incident from the Defender portal.
+```mdatp threat list``` to view the list of threat found, also notice the quarantined status. You'll also be able to view the correponding alert/incident from the Defender portal.
 
 <br>
 ## Step 6: Uninstall MDE
