@@ -21,6 +21,9 @@ Use the ```scp``` command to copy files from your local system to the Linux serv
 ```scp .\GatewayWindowsDefenderATPOnboardingPackage.zip lessi@10.0.0.125:~/``` to copy the onboarding package to the user's home directory.<br>
 ```scp .\install_mde.sh lessi@10.0.0.125:~/``` to copy the installer bash script to the user's home directory.<br>
 On the Linux server, run ```chmod +x install_mde.sh``` to turn the installer file into an executable.
+```bash
+chmod +x install_mde.sh
+```
 
 ## Step 3: Install MDE
 Make sure ```unzip``` is installed on the server you are going to onboard. If not, run ```sudo yum install unzip``` to install unzip.<br>
