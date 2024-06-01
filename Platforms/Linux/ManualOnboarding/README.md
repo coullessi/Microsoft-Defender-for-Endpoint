@@ -95,17 +95,7 @@ python3 --version
 
 ## Step 6: Install MDE
 [RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
-
 Use ```hostnamectl``` command to identify system related information including distribution and release version.
-
-![Distro detail](/assets/pictures/rhel_hostnamectl.png)<br>
-
-| Distro & Version  | Package Location |
-|----------|----------|
-| RHEL/Centos/Oracle 9.0-9.8   | [RHEL/Centos/Oracle 9.0-9.8](https://packages.microsoft.com/config/rhel/9/prod.repo)   |
-| RHEL/Centos/Oracle 8.0-8.8    | [RHEL/Centos/Oracle 8.0-8.8](https://packages.microsoft.com/config/rhel/8/prod.repo)  |
-| RHEL/Centos/Oracle 7.2-7.9 & Amazon    | [RHEL/Centos/Oracle 7.2-7.9 & Amazon](https://packages.microsoft.com/config/rhel/7.2/prod.repo)   |
-
 Install yum-utils if it isn't already installed: 
 ```bash
 sudo yum install yum-utils
