@@ -80,7 +80,7 @@ In Linux, we can share files between computers using scp. scp utilizes ssh to se
 
 On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
 ```bash
-unzip WindowsDefenderATPOnboardingPackage.zip
+unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 ```
 This will give you the ```MicrosoftDefenderATPOnboardingLinuxServer.py``` file.<br>
 Initially the client device is not associated with an organization and the ```org_id``` attribute is blank.

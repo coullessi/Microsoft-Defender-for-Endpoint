@@ -17,7 +17,7 @@ Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and selec
 ![download_package](./Assets/Pictures//download_package.png)
 
 ## Step 2: Copy files to the server to onboard
-Use the ```scp``` command to copy files from your local system to the Linux server. For example<br>
+Use the ```scp``` command to copy files from your local system to the Linux server. For example,<br>
 ```scp .\GatewayWindowsDefenderATPOnboardingPackage.zip lessi@10.0.0.125:~/``` to copy the onboarding package to the user's home directory.<br>
 ```scp .\install_mde.sh lessi@10.0.0.125:~/``` to copy the installer bash script to the user's home directory.<br>
 On the Linux server, run ```chmod +x install_mde.sh``` to turn the installer file into an executable.
@@ -29,12 +29,13 @@ chmod +x install_mde.sh
 Make sure ```unzip``` is installed on the server you are going to onboard. If not, run ```sudo yum install unzip``` to install unzip.<br>
 Intead of running the onboarding commands individually, you can run the [bash script](install_mde.sh) to onboard your server. 
 ```bash
-./install_mde.sh
+sudo ./install_mde.sh
 ```
 If you rather like to run the commands one by one, use the 3 commands below. 
 ```bash
 curl -o mde_installer.sh https://raw.githubusercontent.com/microsoft/mdatp-xplat/master/linux/installation/mde_installer.sh
 sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
+sudo chmod +x ./mde_installer.sh
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "RedHat-Linux" --min_req -y
 ```
 
