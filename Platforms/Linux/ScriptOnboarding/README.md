@@ -38,6 +38,15 @@ sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 sudo chmod +x ./mde_installer.sh
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "RedHat-Linux" --min_req -y
 ```
+### Simulate a malware download
+MDE will detect an attempt to download the eicar file and quarantine the file.
+```bash
+mdatp health --field definitions_status
+sudo mdatp config real-time-protection --value enabled
+curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt
+mdatp threat list
+```
+
 
 ## Step 4: Uninstall MDE
 Download the ```offboarding package``` from the Defender portal.<br>
