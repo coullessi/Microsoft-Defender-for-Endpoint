@@ -94,8 +94,8 @@ python3 --version
 ```
 
 ## Step 6: Install MDE
-[RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)
-Use ```hostnamectl``` command to identify system related information including distribution and release version.
+[RHEL and variants](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/linux-install-manually?view=o365-worldwide#rhel-and-variants-centos-fedora-oracle-linux-amazon-linux-2-rocky-and-alma)<br>
+Use ```hostnamectl``` command to identify system related information including distribution and release version.<br>
 Install yum-utils if it isn't already installed: 
 ```bash
 sudo yum install yum-utils
