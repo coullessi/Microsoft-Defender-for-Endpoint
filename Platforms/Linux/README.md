@@ -22,7 +22,7 @@ This lab exercise will also walk you through configuring MDE features and capabi
 - Administrative privileges on the Linux device.
 
 ## Installation steps
-In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using the following deployment methods:
+In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using one of the following deployment methods:
 | Deployment Methods | Recordings |
 | ------------- | ------------- |
 | [Deploy MDE on Linux Manually](./ManualOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
