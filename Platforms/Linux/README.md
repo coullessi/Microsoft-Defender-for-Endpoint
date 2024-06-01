@@ -22,14 +22,14 @@ This lab exercise will also walk you through configuring MDE features and capabi
 - Administrative privileges on the Linux device.
 
 ## Deployment methods
-In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux using one of the following deployment methods:
+In this lab exercise, you'll install and configure Microsoft Defender for Endpoint on Linux devices using one of the following deployment methods:
 | Deployment Methods | Recordings |
 | ------------- | ------------- |
 | [Deploy MDE on Linux Manually](./ManualOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
 | [Deploy MDE on Linux with a Script](./ScriptOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
 | [Deploy MDE on Linux with Ansible](./AnsibleOnboarding/README.md) | [Video](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A) |
 
-The video playlist of all deployment methods can be found [here](https://m.youtube.com/playlist?list=PLDI76x8X-DfZidrncAefib3a951rVwfFY).<br>
+The video playlist of all deployment methods can be found [here](https://m.youtube.com/playlist?list=PLDI76x8X-DfZidrncAefib3a951rVwfFY).<br><br>
 :information_source: **Note:** For testing purposes, testing Microsoft Defender for Endpoint detection and remediation capability, after ```real-time protection``` is configured (set to true), we are going to [download](https://www.eicar.org/download-anti-malware-testfile/) the anti-malware ```eicar``` test file. It will be flagged as malicious (this is not a malicious file) and quarantined.
 <br><br>
 
