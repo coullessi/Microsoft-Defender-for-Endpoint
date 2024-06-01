@@ -44,8 +44,12 @@ MDE will detect an attempt to download the eicar file and quarantine the file.
 mdatp health --field definitions_status
 sudo mdatp config real-time-protection --value enabled
 curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt
+```
+Verify the file is quarantined
+```bash
 mdatp threat list
 ```
+
 
 
 ## Step 4: Uninstall MDE
