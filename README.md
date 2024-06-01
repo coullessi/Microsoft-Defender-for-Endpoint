@@ -24,5 +24,5 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 <br>
 <hr>
 
-[![LinkeIn](./Platforms/Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
-[![YouTube](./Platforms/Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+[![LinkeIn](./Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
+[![YouTube](./Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
