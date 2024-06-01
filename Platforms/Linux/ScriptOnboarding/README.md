@@ -17,26 +17,23 @@ Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and selec
 ![download_package](./Assets/Pictures//download_package.png)
 
 ## Step 2: Copy files to the server to onboard
-In the example below, the ```scp``` command copies all files from the source folder to the destination directory on the ```control node``` (the destination directory will be created if it doesn't exist):
-- ```scp```: the command for a secure copy over SSH.
-- ```port_number```: the port where the remote server is listening for incoming SSH requests.
-- ```ssh_private_key```: location of the ssh private key; if you do not have a key configure, you can provide a password when prompted. 
-- ```source_folder```: folder containing files to be transferred. 
-- ```destination_directory```: Remote server directory where files will be transferred, in the form of ```user@domain.com:~/directory``` or ```user@ip_address:~/directory```
-
-**Example of command**: ```scp -P [port_number] -i [ssh_private_key] -r [source_folder] [destination_directory]```. Replace all items in square brackets ```[]``` with their corresponding values.<br>
-On the Linux Server, run the ```ls [destination_directory]``` to verify that all files are copied from your local system to the Ansible control node.
+Use the ```scp``` command to copy files from your local system to the Linux server. For example<br>
+```scp .\GatewayWindowsDefenderATPOnboardingPackage.zip lessi@10.0.0.125:~/``` to copy the onboarding package to the user's home directory.<br>
+```scp .\install_mde.sh lessi@10.0.0.125:~/``` to copy the installer bash script to the user's home directory.<br>
+On the Linux server, run ```chmod +x install_mde.sh``` to turn the installer file into an executable.
 
 ## Step 3: Install MDE
-Run the following commands to onboard the server to MDE. Make sure ```unzip``` is installed on the Linux you are going to onboard.
+Make sure ```unzip``` is installed on the server you are going to onboard. If not, run ```sudo yum install unzip``` to install unzip.<br>
+Intead of running the onboarding commands individually, you can run the [bash script](install_mde.sh) to onboard your server. 
 ```bash
-mkdir MDE
-cd MDE
+./install_mde.sh
+```
+If you rather like to run the commands one by one, use the 3 commands below. 
+```bash
 curl -o mde_installer.sh https://raw.githubusercontent.com/microsoft/mdatp-xplat/master/linux/installation/mde_installer.sh
 sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "MDE-Management" --min_req -y
 ```
-Intead of running the above commands individually, you may also run the [bash script](install_mde.sh) to onboard the server.
 
 ## Step 4: Uninstall MDE
 Download the ```offboarding package``` from the Defender portal.<br>
