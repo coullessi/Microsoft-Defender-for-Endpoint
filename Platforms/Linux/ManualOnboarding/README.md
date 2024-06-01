@@ -75,7 +75,7 @@ Go to ```security.microsoft.com > Settings > Endpoints > Onboarding``` and selec
 ## Step 5: Transfer the onboarding package to the Linux machine 
 In Linux, we can share files between computers using scp. scp utilizes ssh to securely transfer files. We use the following syntax to copy files from the source machine to the destination machine: ```scp <path_to_local_file> username@ip_address:<path_to_destination>```, for example the below command will copy the onboarding package from your local computer into the MDE directory of the Linux device.
 ```PowerShell
- scp WindowsDefenderATPOnboardingPackage.zip user@10.0.0.10:~/MDE
+ scp GatewayWindowsDefenderATPOnboardingPackage.zip user@10.0.0.10:~/MDE
 ```  
 
 On the Linux machine, unzip the onboarding package (you may need to install ```unzip```). You'll get the MicrosoftDefenderATPOnboardingLinuxServer.py file.
