@@ -172,6 +172,15 @@ Just in case you want to remove mdatp from devices and offboard them from a tena
 ansible -i hosts all -m ping
 ansible-playbook -K uninstall_mdatp.yml -i hosts
 ```
+
+<br>
+
+## Documentation
+[Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)<br>
+[Install Defender for Endpoint with Ansible](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-with-ansible).<br>
+[Install Ansible - Ansible Documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+
+
 <br>
 <hr>
 

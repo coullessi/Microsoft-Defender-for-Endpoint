@@ -171,6 +171,12 @@ mdatp threat list
 - [Set preferences for MDE](https://learn.microsoft.com/en-us/defender-endpoint/linux-preferences) on your Linux device.
 
 <br>
+
+## Documentation
+[Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)<br>
+[Install Microsoft Defender for Endpoint Manually](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually)
+
+<br>
 <hr>
 
 [![LinkeIn](../../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)

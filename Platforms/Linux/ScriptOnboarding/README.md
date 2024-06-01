@@ -45,6 +45,12 @@ Download the ```offboarding package``` from the Defender portal.<br>
 sudo ./mde_installer.sh --remove --onboard [offboarding_package]
 ```
 <br>
+
+## Documentation
+[Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-linux)<br>
+[Install Microsoft Defender for Endpoint with an Automated Script](https://learn.microsoft.com/en-us/defender-endpoint/linux-install-manually#installer-script)
+
+<br>
 <hr>
 
 [![LinkeIn](../../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
