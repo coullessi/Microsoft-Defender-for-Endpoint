@@ -110,7 +110,7 @@ Install yum-utils if it isn't already installed:
 ```bash
 sudo yum install yum-utils
 ```
-Add the repository to your list of packages (Rhel 9.3 from the prod and insiders-fast channels)
+Add the repositories to your list of packages (Rhel 9.0 from the prod and insiders-fast channels)
 ```bash
 sudo yum-config-manager --add-repo=https://packages.microsoft.com/config/rhel/9.0/prod.repo
 sudo yum-config-manager --add-repo=https://packages.microsoft.com/config/rhel/9.0/insiders-fast.repo
