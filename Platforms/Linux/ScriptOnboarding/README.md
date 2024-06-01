@@ -38,17 +38,22 @@ sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 sudo chmod +x ./mde_installer.sh
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "RedHat-Linux" --min_req -y
 ```
-### Simulate a malware download
+- ### Simulate a malware download
 MDE will detect an attempt to download the eicar file and quarantine the file.
 ```bash
 mdatp health --field definitions_status
 sudo mdatp config real-time-protection --value enabled
 curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt
 ```
-Verify the file is quarantined
+Verify the file is quarantined.
 ```bash
 mdatp threat list
 ```
+- ### Verification in the portal
+    - Verify the device is present in the MDE portal
+    - Verify the tag is set
+    - Verify the alert on the attempt of the eicar file download
+
 
 
 
