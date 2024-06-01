@@ -38,7 +38,7 @@ sudo unzip GatewayWindowsDefenderATPOnboardingPackage.zip
 sudo chmod +x ./mde_installer.sh
 sudo ./mde_installer.sh --install --channel prod --onboard MicrosoftDefenderATPOnboardingLinuxServer.py --tag GROUP "RedHat-Linux" --min_req -y
 ```
-- **Test MDE detection and remediation capability: download the eicar file**
+- **Test MDE detection and remediation capability: download the eicar file**<br>
 MDE will detect an attempt to download the eicar file and quarantine the file.
 ```bash
 mdatp health --field definitions_status
