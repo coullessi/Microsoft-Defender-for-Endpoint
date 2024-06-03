@@ -176,6 +176,7 @@ Run the following commands, for example from the home directory: <br>
 ```mdatp threat list``` to view the list of threat found, also notice the quarantined status. You'll also be able to view the correponding alert/incident from the Defender portal.
 
 <br>
+
 ## Step 6: Uninstall MDE
 :exclamation: **Important**: Do not run this unless you want to remove MDE on devices.
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
