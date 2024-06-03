@@ -112,7 +112,7 @@ sudo pipx ensurepath
 Ansible installed successfully, type 'exit' to exit the shell.
 Start a new shell and run ```ansible --version``` to check the version of ansible installed.
 
-All the above commands used to configure the ```control node``` are also supplied in the [config_controlnode.sh](../../Assets/config_controlnode.sh) file. You can run that file once to generate the SSH keys and install Ansible.
+All the above commands used to configure the ```control node``` are also supplied in the [config_controlnode.sh](./Assets/Config/config_controlnode.sh) file. You can run that file once to generate the SSH keys and install Ansible.
 
 Once Ansible is installed, log out and log back into the system.
 
