@@ -181,8 +181,8 @@ Run the following commands, for example from the home directory: <br>
 :exclamation: **Important**: Do not run this unless you want to remove MDE on devices.
 Just in case you want to remove mdatp from devices and offboard them from a tenant.
 ```bash
-ansible -i hosts all -m ping
-ansible-playbook -K uninstall_mdatp.yml -i hosts
+ansible -i hosts prod -m ping
+ansible-playbook -K uninstall_mdatp.yml -i prod_servers
 ```
 
 <br>
