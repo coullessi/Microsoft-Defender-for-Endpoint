@@ -142,9 +142,19 @@ Then run  ```ansible -K prod_install_mdatp.yml -i hosts``` to install MDE on you
 ```bash
 # Make sure all servers can be reached
 ansible -i hosts prod -m ping
-# Run the playbook to install mdatp
+# Run the playbook to install mdatp on prod servers
 ansible-playbook -K prod_install_mdatp.yml -i hosts prod
 ```
+- **View MDE configuration status on the newly onboarded servers**
+```bash
+ansible -m shell -a 'mdatp health' -i hosts prod | grep -i 'changed\|engine_version\|release_ring\|product_expiration\|passive_mode_enabled\|real_time_protection_enabled\|managed_by'
+```
+- **Test servers connectivity with the Microsoft Defender for Endpoint services**
+```bash
+ansible -m shell -a 'mdatp connectivity test' -i hosts prod
+```
+<br>
+
 To install ```mdatp``` on dev servers, run the following instead:
 ```bash
 ansible -i hosts dev -m ping
