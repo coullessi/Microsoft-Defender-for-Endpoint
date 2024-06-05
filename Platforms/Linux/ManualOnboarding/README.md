@@ -170,4 +170,4 @@ mdatp threat list
 <hr>
 
 [![LinkeIn](../../../Assets/Pictures/LinkeIn.png)](https://www.linkedin.com/in/c-lessi/)
-[![YouTube](../../../Assets/Pictures/YouTube.png)](https://www.youtube.com/channel/UCk8wUhDaJ6pnP_1G5ugrQ1A)
+[![YouTube](../../../Assets/Pictures/YouTube.png)](https://youtu.be/KpuICweyksE)
