@@ -32,7 +32,7 @@ In this lab exercise, you'll install and configure Microsoft Defender for Endpoi
 
 The video playlist of all deployment methods can be found [here](https://m.youtube.com/playlist?list=PLDI76x8X-DfZidrncAefib3a951rVwfFY).<br><br>
 >[!Note]
-For testing purposes, evaluating Microsoft Defender for Endpoint detection and remediation capability, after ```real-time protection``` is configured (set to true), we are going to [download](https://www.eicar.org/download-anti-malware-testfile/) the anti-malware ```eicar``` test file. It will be flagged as malicious (this is not a malicious file) and quarantined.
+For testing purposes, evaluating Microsoft Defender for Endpoint detection and remediation capability, after ```real-time protection``` is configured (set to true), we are going to [download the anti-malware](https://www.eicar.org/download-anti-malware-testfile/) ```eicar``` test file. It will be flagged as malicious (this is not a malicious file) and quarantined.
 <br><br>
 
 ## Reference documents
