@@ -71,55 +71,6 @@ function Get-AccessToken {
     return $response.access_token
 }
 
-## Usage
-
-### Initial Setup
-
-1. **Clear Host and Display Script Information**:
-    ```powershell
-    Clear-Host
-    $note = "`n********************************** Microsoft Defender for Endpoint API Script **********************************
-    ...
-    Write-Host $note -ForegroundColor Green
-    Write-Host "`n****************************************************************************************************************`n" -ForegroundColor Green
-    ```
-
-2. **Prompt for User Confirmation**:
-    ```powershell
-    $proceed = Read-Host "Do you want to proceed with the script? ( Yes/No )"
-    if ($proceed -notmatch "^(Yes|Y)$") {
-        Write-Host -ForegroundColor Yellow "`nExiting the script as per your request."
-        Write-Host
-        exit
-    }
-    ```
-
-3. **Prompt for Key Vault and Secret Information**:
-    ```powershell
-    $vaultName = Read-Host "Key vault name`t"
-    $secretName = Read-Host "Secret name`t"
-    $clientAppName = Read-Host "Client app name`t"
-    ```
-
-### Functions
-
-#### Get-AccessToken
-
-Retrieves an access token from Azure Key Vault.
-
-```powershell
-function Get-AccessToken {
-    param (
-        [Parameter(Mandatory = $true)]
-        [string]$vaultName,
-        [Parameter(Mandatory = $true)]
-        [string]$secretName
-    )
-    ...
-    return $response.access_token
-}
-```
-
 #### Get-MDEDevice
 
 Retrieves a list of devices from MDE.
