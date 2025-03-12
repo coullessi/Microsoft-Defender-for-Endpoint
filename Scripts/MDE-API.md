@@ -169,5 +169,5 @@ Show-Menu
 
 This documentation provides a comprehensive overview of the script's functionality, requirements, and usage. Users are encouraged to refer to the official Microsoft documentation for more detailed information on MDE and its APIs.
 
-⚠️ **Disclaimer**: **Important**: The author disclaims any liability for the execution and outcomes of this script. It is provided "as is" without any express or implied warranties. Users are advised to proceed at their own risk.
+⚠️ **Disclaimer**: The author disclaims any liability for the execution and outcomes of this script. It is provided "as is" without any express or implied warranties. Users are advised to proceed at their own risk.
 
