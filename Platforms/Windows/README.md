@@ -1,5 +1,4 @@
 # Welcome: Microsoft Defender for Endpoint on Windows
-Coming soon...
 
 ## Reference Documents
 [Set Microsoft Defender for Endpoint Deployment](https://learn.microsoft.com/en-us/defender-endpoint/production-deployment)<br>
