@@ -8,7 +8,7 @@
     through the onboarding process interactively.
 
 .NOTES
-    Author: MDE Automation
+    Author: Less-IT - Automation
     Date: November 21, 2025
     Requires: PowerShell 5.1 or higher, Administrator privileges
     Supported: Windows Server 2019, 2022, and above (Full and Core installations)
@@ -3307,6 +3307,7 @@ function Start-MDEOnboarding {
 Start-MDEOnboarding
 
 #endregion
+
 
 
 
